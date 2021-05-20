@@ -78,10 +78,10 @@ class MainInput extends React.Component {
             />
           )}
           <TextInput
-            placeholderTextColor={theme.colors.gray4}
+            placeholderTextColor={theme.colors.gray3}
             {...this.props}
             secureTextEntry={secure}
-            selectionColor={theme.colors.primaryColor}
+            selectionColor={theme.colors.white}
             style={[styles.field, { height: this.props.multiline ? 15 * vh : 5.5 * vh }, this.props.fieldStyle]}
           />
           {this.renderEye()}

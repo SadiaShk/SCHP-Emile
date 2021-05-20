@@ -54,8 +54,9 @@ class SignupScreen extends React.Component {
                         />
                         <Button title="Finish" style={styles.signinBtn}
                             onPress={() => {
-                                this.setState({ screenType: 0 })
-                                this.props.navigation.navigate("SigninScreen")
+                                this.setState({ screenType: 2 })
+                                // this.setState({ screenType: 0 })
+                                // this.props.navigation.navigate("SigninScreen")
                             }}
                         />
 
@@ -63,7 +64,38 @@ class SignupScreen extends React.Component {
                 )
 
                 break;
+            case 2:
+                return (
+                    <View style={[styles.screenPadding, styles.authenticationStep]}>
+                        <View>
+                            <TextCircularBold style={styles.welcomeText}>{"2 Step Authentication"}</TextCircularBold>
+                            <TextCircularBook style={styles.sloganText} numberOfLines={0}>
+                                Please Enter Verification Code Sent To Your Email & Phone Number.</TextCircularBook>
+                        </View>
+                        <MainInput placeholder="Enter Verification Code* "
+                            style={styles.inputField}
+                        />
+                        <View style={styles.forgotRow}>
+                            <TouchableHOC onPress={() => { }}>
+                                <TextCircularBook style={styles.forgotText}>Resend Code</TextCircularBook>
+                            </TouchableHOC>
+                        </View>
+                        <Button title="Continue" style={styles.continueBtn}
+                            onPress={() => {
+                                this.setState({ screenType: 0 })
+                                this.props.navigation.navigate("SigninScreen")
+                            }}
+                        />
+                        <View style={styles.loginRow}>
+                            <TouchableHOC style={styles.signupRow} onPress={() => this.props.navigation.navigate("SigninScreen")}>
+                                <Image source={icons.backArrow} style={styles.backBtn} />
+                                <TextCircularBook style={styles.accountText}>Back To Login</TextCircularBook>
+                            </TouchableHOC>
+                        </View>
+                    </View>
+                )
 
+                break;
             default:
                 return (
                     <View style={styles.screenPadding}>

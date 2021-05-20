@@ -55,6 +55,10 @@ export default StyleSheet.create({
         marginBottom: 2 * vh,
         marginTop: 4 * vh
     },
+    continueBtn: {
+        marginBottom: 2 * vh,
+        marginTop: 1 * vh
+    },
     accountText: {
         fontSize: 1.8 * vh
     },
@@ -66,6 +70,26 @@ export default StyleSheet.create({
         justifyContent: "space-between",
         alignItems: "center"
 
-    }
+    },
+    authenticationStep: {
+        marginTop: 10 * vh
+    },
+    backBtn: {
+        width: 2.4 * vh,
+        height: 2.4 * vh,
+        resizeMode: "contain"
+    },
 
+    signupRow: {
+        flexDirection: "row",
+        justifyContent: "space-between",
+        alignItems: "center"
+    },
+    loginRow: {
+        alignItems: "center"
+    },
+    accountText: {
+        fontSize: 1.8 * vh,
+        marginLeft: 2 * vw,
+    },
 })

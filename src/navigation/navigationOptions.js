@@ -8,33 +8,26 @@ import styles from './styles';
 import { icons } from '../assets/images';
 import ExtendedHeader from '../components/ExtendedHeader';
 import IconButton from '../components/IconButton';
+import TextCircularBold from '../components/TextCircularBold';
+import TextCircularBook from '../components/TextCircularBook';
+
 import theme from '../utils/units/theme';
 
 export const defaultOptions = (activeRouteName, props) => {
     return {
         headerStyle: {
-            height: 9.6 * vh,
+            height: 9.8 * vh,
             shadowColor: 'transparent',
             elevation: 0,
-            backgroundColor: activeRouteName == "PeopleReactedScreen" ||
-                activeRouteName == "AcceptedRequests" ||
-                activeRouteName == "RequestRecevied" ||
-                activeRouteName == "RosterDetail" ||
-                activeRouteName == "RequestDetail" ||
-                activeRouteName == "FollowRequestList" ||
-                activeRouteName == "ChatList" ||
-                activeRouteName == "ChatScreen" ||
-                activeRouteName == "ChangePassword"
-                ? theme.colors.lightOrange : theme.colors.white
+            backgroundColor: theme.colors.darkPurple
 
         },
         headerRightContainerStyle: {
             paddingRight: 5 * vw,
-            marginBottom: 3 * vh
         },
         headerLeftContainerStyle: {
             paddingLeft: 5 * vw,
-            marginBottom: 3 * vh
+            // marginBottom: 3 * vh
 
         },
         headerRight: () => showRightButton(activeRouteName, props),
@@ -46,7 +39,6 @@ export const defaultOptions = (activeRouteName, props) => {
             fontFamily: fonts.Fonts.RBM,
             color: theme.colors.primaryColor,
             fontSize: 2.05 * vh,
-            marginBottom: 3 * vh
 
         },
 
@@ -71,13 +63,21 @@ export const showRightButton = (activeRouteName, { navigation, route }) => {
 
 
             return null
-        case 'ChatList':
-        case 'ChatScreen':
-            return <IconButton onPress={() => { }}
-                style={[styles.headerButtons]} icon={icons.editIcon}
-                iconStyle={{ marginLeft: -0.4 * vw, tintColor: theme.colors.white }}
-                onPress={() => navigation.navigate("ChatSearchScreen")}
-            />
+        case 'HomeScreen':
+            return (
+                <View style={styles.headerRow}>
+                    <IconButton onPress={() => { }}
+                        style={[styles.headerButtons]} icon={icons.searchIcon}
+                        iconStyle={{ marginLeft: -0.4 * vw, tintColor: theme.colors.white }}
+                        onPress={() => { }}
+                    />
+                    <IconButton onPress={() => { }}
+                        style={[styles.headerButtons]} icon={icons.chatBubble}
+                        iconStyle={{ marginLeft: -0.4 * vw, tintColor: theme.colors.white }}
+                        onPress={() => { }}
+                    />
+                </View>
+            )
         default:
             return null
         // <IconButton onPress={() => navigation.navigate("Notification")}
@@ -90,11 +90,14 @@ export const showLeftButton = (activeRouteName, { navigation, route }) => {
     // console.log('activeRouteName, navigation', activeRouteName, navigation, route);
 
     switch (activeRouteName) {
-        case 'Home':
-        case 'Menu':
-        case 'ChatList':
+        case 'HomeScreen':
 
-            return null;
+            return (<View>
+                <TextCircularBold style={styles.titleText}>SCHP
+                <TextCircularBold style={[styles.titleText, styles.titleDot]}>.</TextCircularBold>
+                </TextCircularBold>
+            </View>
+            );
 
 
     }
@@ -109,30 +112,10 @@ export const showLeftButton = (activeRouteName, { navigation, route }) => {
 
 export const shouldHeaderBeShown = (activeRouteName) => {
     switch (activeRouteName) {
-        case 'PeopleReactedScreen':
+        case 'HomeScreen':
             return true;
-        case 'AddPost':
-            return true;
-        case 'EditPost':
-            return true
-        case 'AcceptedRequests':
-            return true
-        case 'RequestRecevied':
-            return true
-        case 'RosterDetail':
-            return true
-        case 'RequestDetail':
-            return true
-        case 'FollowRequestList':
-            return true
-        case 'ChatList':
-            return true
-        case 'ChatScreen':
-            return true
-        case 'ChatSearchScreen':
-            return true
-        case 'ChangePassword':
-            return true
+
+
         default:
             return false;
     }
@@ -141,32 +124,10 @@ export const shouldHeaderBeShown = (activeRouteName) => {
 
 export const getTitle = (activeRouteName, props) => {
     switch (activeRouteName) {
-        case 'PeopleReactedScreen':
-            return 'People who reacted';
-        case 'AddPost':
-            return 'Create Post';
-        case 'EditPost':
-            return 'Edit Post';
-        case 'AcceptedRequests':
-            return 'Accepted Requests'
-        case 'RequestRecevied':
-            return 'Request Recevied'
-        case 'RosterDetail':
-            return 'Roster Detail'
-        case 'RequestDetail':
-            return 'Request Detail'
-        case 'FollowRequestList':
-            return 'Follow Request'
-        case 'ChatList':
-            return 'Chat'
-        case 'ChatScreen':
-            return 'Chat'
-        case 'ChatSearchScreen':
-            return 'New Chat'
-        case 'ChangePassword':
-            return 'Change Password'
+
+
         default:
-            return 'TITLE';
+            return '';
     }
 };
 

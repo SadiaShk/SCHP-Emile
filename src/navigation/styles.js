@@ -102,6 +102,16 @@ export default styles = StyleSheet.create({
     statsNumberText: {
         fontSize: 2 * vh,
         color: theme.colors.primaryColor
+    },
+    titleText: {
+        fontSize: 2.5 * vh
+    },
+    titleDot: {
+        color: theme.colors.primaryColor,
+    },
+    headerRow: {
+        flexDirection: "row",
+        alignItems: "center"
     }
 
 

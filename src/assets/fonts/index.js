@@ -2,7 +2,8 @@ module.exports = {
     Fonts: {
 
         CBD: 'CircularStd-Bold',
-        CBK: 'CircularStd-BooK',
+        CBK: 'CircularStd-Book',
+        CBM: 'CircularStd-Medium',
 
 
 

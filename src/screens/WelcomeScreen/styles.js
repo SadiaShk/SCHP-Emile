@@ -30,7 +30,7 @@ export default StyleSheet.create({
         marginBottom: 3 * vh
     },
     titleText: {
-        fontSize: 2.4 * vh
+        fontSize: 2.5 * vh,
     },
     titleDot: {
         color: theme.colors.primaryColor,

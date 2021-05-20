@@ -4,8 +4,8 @@ import vw from "../../utils/units/vw";
 
 export default styles = StyleSheet.create({
     icon: {
-        height: 1.7 * vh,
-        width: 2 * vh,
+        height: 2.5 * vh,
+        width: 2.5 * vh,
 
         resizeMode: 'contain',
         shadowOffset: {
