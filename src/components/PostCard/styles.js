@@ -65,7 +65,7 @@ const styles = StyleSheet.create({
     resizeMode: "contain"
   },
   postText: {
-    marginVertical: 1.7 * vh,
+
     fontSize: 1.9 * vh
   },
   likeReactIcon: {
@@ -88,9 +88,9 @@ const styles = StyleSheet.create({
   },
   likeLabelRow: {
     borderTopColor: theme.colors.gray3,
-    borderBottomColor: theme.colors.gray3,
+    // borderBottomColor: theme.colors.gray3,
+    // borderBottomWidth: 0.07 * vh,
     borderTopWidth: 0.07 * vh,
-    borderBottomWidth: 0.07 * vh,
     marginTop: 1.5 * vh,
     paddingVertical: 1.3 * vh,
     justifyContent: "space-around"
@@ -127,9 +127,11 @@ const styles = StyleSheet.create({
     marginRight: 4 * vw,
   },
   commentRow: {
-    marginTop: 1.7 * vh,
+    paddingTop: 1.7 * vh,
     alignItems: "flex-start",
     flexDirection: "row",
+    borderTopColor: theme.colors.gray3,
+    borderTopWidth: 0.07 * vh,
   },
   shareInput: {
     width: 78 * vw,
@@ -183,15 +185,29 @@ const styles = StyleSheet.create({
   },
   sponsoredImageView: {
     width: 94 * vw,
-    height: 14 * vh,
+    height: 17 * vh,
+    marginTop: 1.7 * vh
 
   },
   sponsoredImage: {
     width: 94 * vw,
-    height: 14 * vh,
+    height: 17 * vh,
     borderTopLeftRadius: 1 * vw,
     borderTopRightRadius: 1 * vw
 
+  },
+  gradient: {
+    width: 94 * vw,
+    height: 17 * vh,
+    borderTopLeftRadius: 1 * vw,
+    borderTopRightRadius: 1 * vw,
+    flexDirection: "row",
+    justifyContent: "space-between",
+    paddingHorizontal: 2 * vw,
+    paddingTop: 2 * vh
+  },
+  roomsBox: {
+    alignItems: "center"
   },
   sposoredContentRow: {
     width: 94 * vw,
@@ -199,10 +215,66 @@ const styles = StyleSheet.create({
     backgroundColor: theme.colors.black1,
     borderBottomLeftRadius: 1 * vw,
     borderBottomRightRadius: 1 * vw,
-    paddingVertical: 1.8 * vh,
+    paddingVertical: 1 * vh,
     paddingHorizontal: 4 * vw,
     flexDirection: "row",
-    justifyContent: "space-between"
+    justifyContent: "space-between",
+    alignItems: "center"
+  },
+  sponsorTitle: {
+    fontSize: 1.45 * vh,
+    color: theme.colors.gray3
+  },
+  planText: {
+    color: theme.colors.white,
+    fontSize: 1.7 * vh
+
+  },
+  learnBtn: {
+    width: 32 * vw,
+    height: 4.6 * vh,
+    paddingHorizontal: 4 * vw,
+    borderRadius: 1.7 * vw,
+    backgroundColor: "transparent",
+    borderColor: theme.colors.primaryColor,
+    borderWidth: 0.2 * vh
+  },
+  learnBtnLabel: {
+    color: theme.colors.primaryColor
+  },
+  roomText: {
+    color: theme.colors.black1,
+    fontSize: 1.9 * vh
+  },
+  planDesc: {
+    fontSize: 1.5 * vh,
+    color: theme.colors.black1,
+  },
+  callTitle: {
+    fontSize: 1.6 * vh
+  },
+  callNumber: {
+    fontSize: 1.45 * vh
+
+  },
+  planLabelTitle: {
+    backgroundColor: theme.colors.white,
+    paddingVertical: 0.8 * vh,
+    paddingHorizontal: 2 * vw,
+    borderRadius: 1 * vw,
+  },
+  planLabelText: {
+    color: theme.colors.green1,
+    fontSize: 1.3 * vh
+  },
+  postTextView: {
+    marginVertical: 1.7 * vh,
+  },
+  seeMoreText: {
+    fontSize: 1.6 * vh,
+    color: theme.colors.gray3,
+    marginTop: 0.4 * vh,
+    width: 35 * vw,
   }
 
 });

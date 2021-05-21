@@ -18,7 +18,9 @@ module.exports = {
         likeIcon: require('./icons/likeIcon.png'),
         commentIcon: require('./icons/commentIcon.png'),
         shareIcon: require('./icons/shareIcon.png'),
-        sendIcon: require('./icons/sendIcon.png')
+        sendIcon: require('./icons/sendIcon.png'),
+        sponsoredIcon: require('./icons/sponsoredIcon.png'),
+
 
     },
     tabIcons: {
@@ -35,6 +37,7 @@ module.exports = {
         postImage4: require('./sampleImages/postImage4.png'),
         postImage5: require('./sampleImages/postImage5.png'),
         postImage6: require('./sampleImages/postImage6.png'),
+        postImage7: require('./sampleImages/postImage7.png'),
         sponsoredImage: require('./sampleImages/sponsoredImage.png'),
 
 

@@ -10,6 +10,7 @@ import Button from '../../components/Button';
 import MainInput from '../../components/MainInput';
 import PostCard from '../../components/PostCard';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
+import ViewReactionPopup from '../../popups/ViewReactionPopup';
 
 
 class HomeScreen extends React.Component {
@@ -21,13 +22,35 @@ class HomeScreen extends React.Component {
                     userImage: sampleImages.userImage,
                     name: "Mark Carson",
                     date: "Posted on 10:00 am",
-                    content: "Lorem ipsum dolor sit amet, consectetur are it adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sitom",
+                    content: "Lorem ipsum dolor sit amet, consectetur are it adipiscing elit. Aenean euismod bibendum laoreet.consectetur are it adipiscing elit. Aenean euismod bibendum laoreet.  Proin gravida dolor sitom",
                     commentCount: 10,
                     shareCount: 3,
                     reactionCount: 150,
                     isReactionLike: true,
                     isReactionHeart: true,
                     isReactionLaugh: true
+                },
+                {
+                    userImage: sampleImages.userImage,
+                    name: "ABC Builders",
+                    date: "Posted on 10:00 am",
+                    content: "Lorem ipsum dolor sit amet, consectetur are it adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sitom",
+                    commentCount: 10,
+                    shareCount: 3,
+                    images: [
+                        sampleImages.postImage3,
+                        sampleImages.postImage2,
+                        sampleImages.postImage6,
+                        sampleImages.postImage4,
+                        sampleImages.postImage5
+
+                    ],
+                    reactionCount: 150,
+                    isReactionLike: true,
+                    isReactionHeart: true,
+                    isReactionLaugh: false,
+                    isSponsored: true
+
                 },
                 {
                     userImage: sampleImages.userImage,
@@ -62,8 +85,24 @@ class HomeScreen extends React.Component {
                     reactionCount: 150,
                     isReactionLike: true,
                     isReactionHeart: true,
+                    isReactionLaugh: false,
+
+                },
+                {
+                    userImage: sampleImages.userImage,
+                    name: "Amelia Isabell",
+                    date: "Posted on 10:00 am",
+                    content: "",
+                    commentCount: "25K",
+                    shareCount: 3,
+                    images: [
+                        sampleImages.postImage7
+                    ],
+                    reactionCount: 150,
+                    isReactionLike: true,
+                    isReactionHeart: true,
                     isReactionLaugh: false
-                }
+                },
             ]
 
         }
@@ -84,14 +123,16 @@ class HomeScreen extends React.Component {
                         style={styles.shareInput}
                     />
                 </View>
+                <ViewReactionPopup
+                    ref={(e) => (this.acceptAlert = e)}
+
+                />
                 {this.state.postData.map((item, index) => {
                     return (
                         <PostCard item={item} cardStyle={1} />
                     )
                 })}
-                {/* <PostCard cardStyle={1} />
 
-                <PostCard cardStyle={2} /> */}
 
             </KeyboardAwareScrollView>
 
