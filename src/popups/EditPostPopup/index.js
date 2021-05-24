@@ -305,7 +305,9 @@ export default class EditPostPopup extends React.Component {
     }
     privacyOptionsView = () => {
         return (
-            
+            <View>
+
+            </View>
         )
     }
     render() {
