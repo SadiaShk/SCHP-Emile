@@ -11,6 +11,11 @@ import MainInput from '../../components/MainInput';
 import PostCard from '../../components/PostCard';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import ViewReactionPopup from '../../popups/ViewReactionPopup';
+import CreatePostPopup from '../../popups/CreatePostPopup';
+import TouchableHOC from '../../components/TouchableHOC';
+import PostOptionsPopup from '../../popups/PostOptionsPopup';
+import PrivacyOptionsPopup from '../../popups/PrivacyOptionsPopup';
+import EditPostPopup from '../../popups/EditPostPopup';
 
 
 class HomeScreen extends React.Component {
@@ -119,21 +124,38 @@ class HomeScreen extends React.Component {
             >
                 <View style={styles.postRow}>
                     <Image source={sampleImages.userImage} style={styles.userImage} />
-                    <MainInput placeholder="Share Something?"
-                        style={styles.shareInput}
-                    />
+                    <TouchableHOC onPress={() => this.createPostPopup.show()}>
+                        <MainInput placeholder="Share Something?"
+                            style={styles.shareInput}
+                        />
+                    </TouchableHOC>
                 </View>
                 <ViewReactionPopup
-                    ref={(e) => (this.acceptAlert = e)}
+                    ref={(e) => (this.reactionPopup = e)}
 
+                />
+                <CreatePostPopup
+                    ref={(e) => (this.createPostPopup = e)}
+
+                />
+                <PostOptionsPopup
+                    ref={(e) => (this.postOptionsPopup = e)}
+                    onEditPress={() => this.editPostPopup.show()}
+                />
+                <PrivacyOptionsPopup
+                    ref={(e) => (this.privacyOptionsPopup = e)}
+                />
+                <EditPostPopup
+                    ref={(e) => (this.editPostPopup = e)}
                 />
                 {this.state.postData.map((item, index) => {
                     return (
-                        <PostCard item={item} cardStyle={1} />
+                        <PostCard item={item}
+                            reactionPress={() => this.reactionPopup.show()}
+                            onOptionPress={() => this.postOptionsPopup.show()}
+                        />
                     )
                 })}
-
-
             </KeyboardAwareScrollView>
 
         )

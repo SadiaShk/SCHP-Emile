@@ -20,7 +20,19 @@ module.exports = {
         shareIcon: require('./icons/shareIcon.png'),
         sendIcon: require('./icons/sendIcon.png'),
         sponsoredIcon: require('./icons/sponsoredIcon.png'),
-
+        sadIcon: require('./icons/sadIcon.png'),
+        galleryIcon: require('./icons/galleryIcon.png'),
+        videoCamIcon: require('./icons/videoCamIcon.png'),
+        dropdownIcon: require('./icons/dropdownIcon.png'),
+        crossIconWhite: require('./icons/crossIconWhite.png'),
+        playBtn: require('./icons/playBtn.png'),
+        clockIcon: require('./icons/clockIcon.png'),
+        editPostIcon2: require('./icons/editPostIcon2.png'),
+        trashIcon: require('./icons/trashIcon.png'),
+        cancelIcon: require('./icons/cancelIcon.png'),
+        friendIcon: require('./icons/friendIcon.png'),
+        privateIcon: require('./icons/privateIcon.png'),
+        publicIcon: require('./icons/publicIcon.png')
 
     },
     tabIcons: {
@@ -38,6 +50,7 @@ module.exports = {
         postImage5: require('./sampleImages/postImage5.png'),
         postImage6: require('./sampleImages/postImage6.png'),
         postImage7: require('./sampleImages/postImage7.png'),
+        postImage8: require('./sampleImages/postImage8.png'),
         sponsoredImage: require('./sampleImages/sponsoredImage.png'),
 
 

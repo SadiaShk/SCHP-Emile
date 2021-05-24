@@ -15,7 +15,8 @@ export default StyleSheet.create({
   modalContainer: {
     width: 100 * vw,
     minHeight: 85 * vh,
-    paddingVertical: 2 * vh,
+
+    paddingVertical: 1.5 * vh,
     backgroundColor: theme.colors.darkPurple,
     // alignItems: "center",
     // justifyContent: "center",
@@ -42,21 +43,22 @@ export default StyleSheet.create({
     alignItems: "center",
     justifyContent: "center"
   },
-  title: {
-    color: theme.colors.blue,
-    fontSize: 2.4 * vh,
-    textAlign: "center",
-    marginTop: 2 * vh
+
+
+  row: {
+    flexDirection: "row",
+    alignItems: "center"
   },
-  titleBox: {
+  screenPadding: {
+    paddingHorizontal: 4 * vw,
+  },
+  expandedRow: {
+    flexDirection: "row",
     alignItems: "center",
+    justifyContent: "space-between"
   },
-  underline: {
-    backgroundColor: theme.colors.primaryColor,
-    width: 9 * vw,
-    height: 0.3 * vh,
-    marginTop: 0.2 * vh
-  },
+
+
   headerRow: {
     flexDirection: "row",
     justifyContent: "space-between",
@@ -64,12 +66,21 @@ export default StyleSheet.create({
     paddingHorizontal: 4 * vw,
     borderBottomWidth: 0.1 * vh,
     borderBottomColor: theme.colors.gray3,
-    paddingBottom: 2 * vh
+    paddingBottom: 1.5 * vh,
+    marginBottom: 2 * vh
 
   },
   row: {
     flexDirection: "row",
     alignItems: "center"
+  },
+  screenPadding: {
+    paddingHorizontal: 4 * vw,
+  },
+  expandedRow: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between"
   },
   backBtn: {
     marginRight: 3 * vw,
@@ -82,42 +93,27 @@ export default StyleSheet.create({
   popupTitle: {
     fontSize: 2 * vh
   },
-  reactionTitleRow: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
-    paddingHorizontal: 4 * vw,
-    borderBottomWidth: 0.1 * vh,
-    borderBottomColor: theme.colors.gray3,
-    paddingVertical: 1.6 * vh
+  postBtn: {
+    width: 23 * vw,
+    height: 4.8 * vh,
+    borderRadius: 1.5 * vw,
   },
-  titleBtn: {
-    height: 6.2 * vh,
-    width: 20 * vw,
-    flexDirection: "row",
-    justifyContent: "center",
-    alignItems: "center",
+  postPrivacyTitle: {
+    fontSize: 1.9 * vh,
+    marginBottom: 2 * vh
   },
-  titleText: {
-    fontSize: 1.75 * vh
+  videoOption: {
+    marginTop: 1.7 * vh,
+    marginBottom: 1 * vh
   },
-  likeReactIcon: {
-    width: 2.4 * vh,
-    height: 2.4 * vh,
+  optionValue: {
+    fontSize: 1.8 * vh,
+    marginLeft: 3 * vw,
+  },
+  clockIcon: {
+    width: 1.8 * vh,
+    height: 1.8 * vh,
     resizeMode: "contain",
-    marginRight: 1 * vw,
-  },
-  requestTab: {
-    height: 6.2 * vh,
-    width: 25 * vw,
-    backgroundColor: theme.colors.darkPurple,
-    borderBottomWidth: 0.1 * vh,
-    borderBottomColor: theme.colors.gray3,
-  },
-  tabView: {
-
-    overflow: "hidden",
-    backgroundColor: theme.colors.darkPurple,
-
-  },
+    tintColor: theme.colors.white
+  }
 })

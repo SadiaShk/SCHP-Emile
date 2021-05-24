@@ -62,7 +62,7 @@ class PostCard extends React.Component {
                   }
                 </View>
               </View>
-              <TouchableHOC style={styles.optionBtn}>
+              <TouchableHOC style={styles.optionBtn} onPress={this.props.onOptionPress}>
                 <Image source={icons.horizontalDot} style={styles.horizontalDot} />
               </TouchableHOC>
             </View>
@@ -153,12 +153,12 @@ class PostCard extends React.Component {
                     }
                   </View> : null}
             <View style={styles.expandedRow}>
-              <View style={styles.row}>
+              <TouchableHOC style={styles.row} onPress={this.props.reactionPress}>
                 {this.props.item.isReactionLike ? <Image source={icons.likeBlueIcon} style={styles.likeReactIcon} /> : null}
                 {this.props.item.isReactionHeart ? <Image source={icons.heartIcon} style={[styles.likeReactIcon, styles.reactIconLeft]} /> : null}
                 {this.props.item.isReactionLaugh ? <Image source={icons.laughIcon} style={[styles.likeReactIcon, styles.reactIconLeft]} /> : null}
                 <TextCircularBook style={styles.reactionCount}>{this.props.item.reactionCount}</TextCircularBook>
-              </View>
+              </TouchableHOC>
               <View style={styles.row}>
                 <TextCircularBook style={styles.commentCountText}>{this.props.item.commentCount} Comments</TextCircularBook>
                 <TextCircularBook style={[styles.commentCountText, styles.dotText]}>.</TextCircularBook>

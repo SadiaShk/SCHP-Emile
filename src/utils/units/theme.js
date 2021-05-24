@@ -12,7 +12,12 @@ export default theme = {
         gray3: "#999",
         gray4: "#707070",
         lightGreen: "#2EDEB1",
-        green1: "#6D6D00"
+        green1: "#6D6D00",
+        lightBlue: "#578FFE",
+        lightRed: "#F44F64",
+        lightYellow: "#F9D670",
+        red: "#FF2940",
+        lightPurple: "#F0E1FF"
 
 
     },

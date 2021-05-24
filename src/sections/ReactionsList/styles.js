@@ -11,48 +11,26 @@ export default StyleSheet.create({
         backgroundColor: theme.colors.darkPurple,
 
     },
-    peopleBanner: {
-        width: 100 * vw,
-        height: 50 * vh
-
+    nameText: {
+        fontSize: 1.7 * vh,
+        marginLeft: 3 * vw,
     },
-    shapeImage: {
-        position: "absolute",
-        width: 100 * vw,
-        height: 70 * vh
+    userImageView: {
+        width: 6 * vh,
+        height: 6 * vh,
+        borderRadius: 6 / 2 * vh
     },
-    titleRow: {
+    reactionRow: {
         flexDirection: "row",
         alignItems: "center",
-        justifyContent: "space-between",
-        paddingHorizontal: 4 * vw,
-        marginTop: 8 * vh,
-        marginBottom: 3 * vh
+        marginTop: 2 * vh
     },
-    titleText: {
-        fontSize: 2.5 * vh,
-    },
-    titleDot: {
-        color: theme.colors.primaryColor,
-    },
-    signupText: {
-        fontSize: 2.3 * vh,
-        color: theme.colors.primaryColor
-
-    },
-    getStartedText: {
-        fontSize: 3.9 * vh
-    },
-    screenPadding: {
-        paddingHorizontal: 4 * vw,
-        flex: 1,
-        justifyContent: "space-between",
-        paddingBottom: 5 * vh
-
-    },
-    sloganText: {
-        fontSize: 1.8 * vh,
-        marginTop: 1 * vh
+    reactionIcon: {
+        position: "absolute",
+        bottom: 0,
+        right: 0,
+        width: 2 * vh,
+        height: 2 * vh,
+        resizeMode: "contain"
     }
-
 })

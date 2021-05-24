@@ -5,43 +5,56 @@ import { banners, icons, sampleImages } from '../../assets/images'
 import { connect } from 'react-redux';
 import SplashScreen from 'react-native-splash-screen';
 import TextCircularBold from '../../components/TextCircularBold';
-import TextCircularBook from '../../components/TextCircularBook';
+import TextCircularMedium from '../../components/TextCircularMedium';
 import Button from '../../components/Button';
 
+const allReactions = [
+    { image: sampleImages.userImage, name: "Maria Jay", reaction: icons.likeBlueIcon },
+    { image: sampleImages.userImage, name: "Joseph Carter", reaction: icons.heartIcon },
+    { image: sampleImages.userImage, name: "Natasha Carson", reaction: icons.heartIcon },
+    { image: sampleImages.userImage, name: "Oliver James", reaction: icons.likeBlueIcon },
+    { image: sampleImages.userImage, name: "Oliver James", reaction: icons.laughIcon },
+    { image: sampleImages.userImage, name: "Oliver James", reaction: icons.laughIcon },
+    { image: sampleImages.userImage, name: "Oliver James", reaction: icons.heartIcon },
+
+
+]
 
 class ReactionsList extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
 
-
         }
     }
 
     componentDidMount() {
         SplashScreen.hide()
-
+    }
+    renderReactions = ({ item, index }) => {
+        return (
+            <View style={styles.reactionRow} >
+                <ImageBackground source={sampleImages.userImage} style={styles.userImageView}
+                    imageStyle={styles.userImageView}>
+                    <Image source={
+                        this.props.route.params.type == "LikeReaction" ?
+                            icons.likeBlueIcon :
+                            this.props.route.params.type == "HeartReaction" ?
+                                icons.heartIcon :
+                                this.props.route.params.type == "LaughReaction" ?
+                                    icons.laughIcon :
+                                    this.props.route.params.type == "SadReaction" ?
+                                        icons.sadIcon :
+                                        item.reaction} style={styles.reactionIcon} />
+                </ImageBackground>
+                <TextCircularMedium style={styles.nameText}>{item.name}</TextCircularMedium>
+            </View>
+        )
     }
     render() {
-
         return (
-            <View style={styles.mainContainer}
-            >
-                <Image source={icons.bgShape} style={styles.shapeImage} />
-                <View style={styles.titleRow}>
-                    <TextCircularBold style={styles.titleText}>SCHP<TextCircularBold style={[styles.titleText, styles.titleDot]}>.</TextCircularBold></TextCircularBold>
-                    <TextCircularBook style={styles.signupText}>Sign Up</TextCircularBook>
-
-                </View>
-
-                <Image source={sampleImages.peopleBanner} style={styles.peopleBanner} />
-                <View style={styles.screenPadding}>
-                    <View>
-                        <TextCircularBold numberOfLines={0} style={styles.getStartedText}>{"Let's Get\nStarted"}</TextCircularBold>
-                        <TextCircularBook style={styles.sloganText}>Everythings works better together</TextCircularBook>
-                    </View>
-                    <Button title="Login" />
-                </View>
+            <View style={styles.mainContainer}>
+                <FlatList data={allReactions} renderItem={this.renderReactions} />
             </View>
 
         )

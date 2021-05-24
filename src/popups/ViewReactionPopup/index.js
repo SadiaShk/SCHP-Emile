@@ -110,14 +110,14 @@ export default class ViewReactionPopup extends React.Component {
 
         return (
 
-            <Modal onRequestClose={this.dismissPopup} visible={true} transparent={true} animationType='fade'>
+            <Modal onRequestClose={this.dismissPopup} visible={this.state.visible} transparent={true} animationType='fade'>
                 <TouchableHOC style={styles.modalTouchable} onPress={this.dismissPopup} >
 
                 </TouchableHOC>
                 <View style={styles.modalContainer}>
                     <View style={styles.headerRow}>
                         <View style={styles.row}>
-                            <TouchableHOC style={styles.backBtn}>
+                            <TouchableHOC style={styles.backBtn} onPress={this.dismissPopup}>
                                 <Image source={icons.backArrow} style={styles.backIcon} />
                             </TouchableHOC>
                             <TextCircularMedium style={styles.popupTitle}>People who reacted</TextCircularMedium>
@@ -139,89 +139,111 @@ export default class ViewReactionPopup extends React.Component {
                             indicatorStyle: styles.indicatorStyle,
                             indicatorContainerStyle: styles.indicatorContainerStyle,
                         }}>
-
-
                         <Tab.Screen
-                            name="Pending"
+                            name="All"
                             options={{
                                 tabBarLabel: (params) => {
+                                    // console.log("params", params);
                                     return (
-                                        <View style={styles.titleBtn}>
-                                            <TextCircularMedium style={styles.titleText}>All 3.5K</TextCircularMedium>
+                                        <View style={[styles.titleBtn, {
+                                            borderBottomColor: params.focused ? theme.colors.primaryColor : "transparent",
+                                            borderBottomWidth: params.focused ? 0.2 * vh : 0
+                                        }]} >
+                                            <TextCircularMedium
+                                                style={[styles.titleText, { color: params.focused ? theme.colors.primaryColor : theme.colors.white }]}>
+                                                All 3.5K</TextCircularMedium>
                                         </View>
                                     )
                                 },
                             }}
                             component={ReactionsList}
-                            initialParams={{ type: "Pending" }}
+                            initialParams={{ type: "All" }}
 
                         />
                         <Tab.Screen
-                            name="In Process"
+                            name="LikeReaction"
                             options={{
                                 tabBarLabel: (params) => {
                                     return (
-                                        <View style={styles.titleBtn}>
+                                        <View style={[styles.titleBtn, {
+                                            borderBottomColor: params.focused ? theme.colors.lightBlue : "transparent",
+                                            borderBottomWidth: params.focused ? 0.2 * vh : 0
+                                        }]}>
                                             <Image source={icons.likeBlueIcon} style={styles.likeReactIcon} />
-                                            <TextCircularMedium style={styles.titleText}>950</TextCircularMedium>
+                                            <TextCircularMedium
+                                                style={[styles.titleText, { color: params.focused ? theme.colors.lightBlue : theme.colors.white }]}>
+                                                950</TextCircularMedium>
                                         </View>
                                     )
                                 },
                             }}
                             component={ReactionsList}
-                            initialParams={{ type: "In Process" }}
+                            initialParams={{ type: "LikeReaction" }}
 
                         />
                         <Tab.Screen
-                            name="Completed"
+                            name="HeartReaction"
                             options={{
                                 tabBarLabel: (params) => {
                                     return (
-                                        <View style={styles.titleBtn}>
+                                        <View style={[styles.titleBtn, {
+                                            borderBottomColor: params.focused ? theme.colors.lightRed : "transparent",
+                                            borderBottomWidth: params.focused ? 0.2 * vh : 0
+                                        }]}>
                                             <Image source={icons.heartIcon} style={styles.likeReactIcon} />
-                                            <TextCircularMedium style={styles.titleText}>623</TextCircularMedium>
+                                            <TextCircularMedium
+                                                style={[styles.titleText, { color: params.focused ? theme.colors.lightRed : theme.colors.white }]}>
+                                                623</TextCircularMedium>
                                         </View>
                                     )
                                 },
                             }}
                             component={ReactionsList}
-                            initialParams={{ type: "Completed" }}
+                            initialParams={{ type: "HeartReaction" }}
                         />
                         <Tab.Screen
-                            name="Cancelled"
+                            name="LaughReaction"
                             options={{
                                 tabBarLabel: (params) => {
                                     return (
-                                        <View style={styles.titleBtn}>
+                                        <View style={[styles.titleBtn, {
+                                            borderBottomColor: params.focused ? theme.colors.lightYellow : "transparent",
+                                            borderBottomWidth: params.focused ? 0.2 * vh : 0
+                                        }]}>
                                             <Image source={icons.laughIcon} style={styles.likeReactIcon} />
-                                            <TextCircularMedium style={styles.titleText}>323</TextCircularMedium>
+                                            <TextCircularMedium style={[styles.titleText, { color: params.focused ? theme.colors.lightYellow : theme.colors.white }]}>
+                                                323</TextCircularMedium>
                                         </View>
 
                                     )
                                 },
                             }}
                             component={ReactionsList}
-                            initialParams={{ type: "Cancelled" }}
+                            initialParams={{ type: "LaughReaction" }}
+
+                        />
+                        <Tab.Screen
+                            name="SadReaction"
+                            options={{
+                                tabBarLabel: (params) => {
+                                    return (
+                                        <View style={[styles.titleBtn, {
+                                            borderBottomColor: params.focused ? theme.colors.lightYellow : "transparent",
+                                            borderBottomWidth: params.focused ? 0.2 * vh : 0
+                                        }]}>
+                                            <Image source={icons.sadIcon} style={styles.likeReactIcon} />
+                                            <TextCircularMedium style={[styles.titleText, { color: params.focused ? theme.colors.lightYellow : theme.colors.white }]}>250</TextCircularMedium>
+                                        </View>
+
+                                    )
+                                },
+                            }}
+                            component={ReactionsList}
+                            initialParams={{ type: "SadReaction" }}
 
                         />
                     </Tab.Navigator>
-                    {/* <ScrollView style={styles.reactionTitleRow}>
-                        <View style={styles.titleBtn}>
-                            <TextCircularMedium style={styles.titleText}>All 3.5K</TextCircularMedium>
-                        </View>
-                        <View style={styles.titleBtn}>
-                            <Image source={icons.likeBlueIcon} style={styles.likeReactIcon} />
-                            <TextCircularMedium style={styles.titleText}>950</TextCircularMedium>
-                        </View>
-                        <View style={styles.titleBtn}>
-                            <Image source={icons.heartIcon} style={styles.likeReactIcon} />
-                            <TextCircularMedium style={styles.titleText}>623</TextCircularMedium>
-                        </View>
-                        <View style={styles.titleBtn}>
-                            <Image source={icons.laughIcon} style={styles.likeReactIcon} />
-                            <TextCircularMedium style={styles.titleText}>323</TextCircularMedium>
-                        </View>
-                    </ScrollView> */}
+
                 </View>
             </Modal>
 

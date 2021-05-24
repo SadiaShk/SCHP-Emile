@@ -12,11 +12,11 @@
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		37521ACB1B98D149F286D555 /* libPods-emile.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A4AD3BABFD74EACA6B79338 /* libPods-emile.a */; };
-		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		EF26F1BC72A719C3ABD1B8AA /* libPods-emile-emileTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 806207A188F1160EC4184021 /* libPods-emile-emileTests.a */; };
-		E297F5F2496345ECAE290C28 /* CircularStd-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E34E3FF581E145DCAD539702 /* CircularStd-Bold.ttf */; };
 		54411DE64AA24C988807D3CE /* CircularStd-Book.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 94A3F8DD2BE6499FA892F65F /* CircularStd-Book.ttf */; };
+		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		E297F5F2496345ECAE290C28 /* CircularStd-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E34E3FF581E145DCAD539702 /* CircularStd-Bold.ttf */; };
 		E8CDE4F31C744C39A8386C74 /* CircularStd-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 99C03E9653BF48ECAD8AD1D3 /* CircularStd-Medium.otf */; };
+		EF26F1BC72A719C3ABD1B8AA /* libPods-emile-emileTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 806207A188F1160EC4184021 /* libPods-emile-emileTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,11 +45,11 @@
 		7E5C643A09B1BBB5F50C70B5 /* Pods-emile-emileTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-emile-emileTests.debug.xcconfig"; path = "Target Support Files/Pods-emile-emileTests/Pods-emile-emileTests.debug.xcconfig"; sourceTree = "<group>"; };
 		806207A188F1160EC4184021 /* libPods-emile-emileTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-emile-emileTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = emile/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		94A3F8DD2BE6499FA892F65F /* CircularStd-Book.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "CircularStd-Book.ttf"; path = "../src/assets/fonts/CircularStd-Book.ttf"; sourceTree = "<group>"; };
+		99C03E9653BF48ECAD8AD1D3 /* CircularStd-Medium.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "CircularStd-Medium.otf"; path = "../src/assets/fonts/CircularStd-Medium.otf"; sourceTree = "<group>"; };
 		C76F34FFBD5245ECDB055B64 /* Pods-emile-emileTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-emile-emileTests.release.xcconfig"; path = "Target Support Files/Pods-emile-emileTests/Pods-emile-emileTests.release.xcconfig"; sourceTree = "<group>"; };
+		E34E3FF581E145DCAD539702 /* CircularStd-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "CircularStd-Bold.ttf"; path = "../src/assets/fonts/CircularStd-Bold.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		E34E3FF581E145DCAD539702 /* CircularStd-Bold.ttf */ = {isa = PBXFileReference; name = "CircularStd-Bold.ttf"; path = "../src/assets/fonts/CircularStd-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		94A3F8DD2BE6499FA892F65F /* CircularStd-Book.ttf */ = {isa = PBXFileReference; name = "CircularStd-Book.ttf"; path = "../src/assets/fonts/CircularStd-Book.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		99C03E9653BF48ECAD8AD1D3 /* CircularStd-Medium.otf */ = {isa = PBXFileReference; name = "CircularStd-Medium.otf"; path = "../src/assets/fonts/CircularStd-Medium.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +112,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		7538FEA7CEBC4F85AF311FB7 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E34E3FF581E145DCAD539702 /* CircularStd-Bold.ttf */,
+				94A3F8DD2BE6499FA892F65F /* CircularStd-Book.ttf */,
+				99C03E9653BF48ECAD8AD1D3 /* CircularStd-Medium.otf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
@@ -152,20 +162,8 @@
 				7E5C643A09B1BBB5F50C70B5 /* Pods-emile-emileTests.debug.xcconfig */,
 				C76F34FFBD5245ECDB055B64 /* Pods-emile-emileTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
-		};
-		7538FEA7CEBC4F85AF311FB7 /* Resources */ = {
-			isa = "PBXGroup";
-			children = (
-				E34E3FF581E145DCAD539702 /* CircularStd-Bold.ttf */,
-				94A3F8DD2BE6499FA892F65F /* CircularStd-Book.ttf */,
-				99C03E9653BF48ECAD8AD1D3 /* CircularStd-Medium.otf */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-			path = "";
 		};
 /* End PBXGroup section */
 
@@ -521,6 +519,7 @@
 				PRODUCT_NAME = emile;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -545,6 +544,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = emile;
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
