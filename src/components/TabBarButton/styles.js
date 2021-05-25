@@ -6,13 +6,10 @@ import theme from "../../utils/units/theme";
 
 export default style = StyleSheet.create({
     tabButtonContainer: {
-        height: 7 * vh,
-        width: 25 * vw,
-        margin: 0,
-        paddingTop: 0.5 * vh,
-        alignItems: 'center',
-        justifyContent: "center",
-        flexDirection: "row"
+        width: 20 * vw,
+        alignItems: "center",
+        height: 6.7 * vh,
+        justifyContent: "center"
         // borderRadius:1.5*vw,
 
     },
@@ -28,10 +25,10 @@ export default style = StyleSheet.create({
 
     },
     tabButtonIcon: {
-        height: 1.8 * vh,
-        width: 1.8 * vh,
-        marginBottom: 0.2 * vh,
+        height: 2.5 * vh,
+        width: 2.5 * vh,
         resizeMode: 'contain',
+
     },
     titleText: {
         height: 2.4 * vh,
@@ -80,6 +77,13 @@ export default style = StyleSheet.create({
         color: theme.colors.white,
         marginLeft: 1 * vw,
         textTransform: "uppercase"
+    },
+    underline: {
+        backgroundColor: theme.colors.primaryColor,
+        width: 6 * vw,
+        height: 0.3 * vh,
+        bottom: -0.3 * vh,
+        position: "absolute"
     }
 
 })

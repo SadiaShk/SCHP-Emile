@@ -151,7 +151,23 @@ class PostCard extends React.Component {
                       )
                     })
                     }
-                  </View> : null}
+                  </View> : this.props.item.videos ?
+                  <ImageBackground source={this.props.item.videos[0]}
+                    style={[styles.postImage2,
+                    {
+                      width: 92 * vw,
+                      height: 18 * vh,
+                    }]}
+                    imageStyle={[styles.postImage2,
+                    {
+                      width: 92 * vw,
+                      height: 18 * vh,
+                    }]}>
+                    <TouchableHOC style={styles.blurView}>
+                      <TextCircularBook style={styles.additionalCount}>+3</TextCircularBook>
+                    </TouchableHOC>
+                  </ImageBackground> : null
+            }
             <View style={styles.expandedRow}>
               <TouchableHOC style={styles.row} onPress={this.props.reactionPress}>
                 {this.props.item.isReactionLike ? <Image source={icons.likeBlueIcon} style={styles.likeReactIcon} /> : null}

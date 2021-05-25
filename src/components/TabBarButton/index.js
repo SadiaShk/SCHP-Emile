@@ -25,19 +25,24 @@ class TabBarButton extends React.Component {
                 title = "Home"
                 break
             }
-            case 'Request': {
-                imageSource = tabIcons.requestIcon
-                title = "REQUESTS"
+            case 'Users': {
+                imageSource = tabIcons.usersIcon
+                title = "Users"
                 break
             }
-            case 'Chat': {
-                imageSource = tabIcons.chatIcon
-                title = "CHAT"
+            case 'Play': {
+                imageSource = tabIcons.playIcon
+                title = "Play"
                 break
             }
-            case 'Roster': {
-                imageSource = tabIcons.rosterIcon
-                title = "ROSTERS"
+            case 'Notification': {
+                imageSource = tabIcons.bellIcon
+                title = "Notification"
+                break
+            }
+            case 'Setting': {
+                imageSource = tabIcons.settingIcon
+                title = "Setting"
                 break
             }
         }
@@ -47,26 +52,12 @@ class TabBarButton extends React.Component {
             <View
                 style={[styles.tabButtonContainer,]}
             >
-                {focused ?
-                    <LinearGradient colors={['rgba(255,139,67,1)', 'rgba(225,97,18,1)']} style={[styles.bannerGradient]}>
 
-                        <Image
-                            style={[styles.tabButtonIcon, { tintColor: focused ? "#FFF" : "#BFB8B5" }]}
-                            source={imageSource}
-                            resizeMode="contain" />
-                        <TextCircularBold style={[styles.tabTitle, { color: focused ? "#FFF" : "#BFB8B5" }]}>{title}</TextCircularBold>
-                    </LinearGradient>
-
-                    :
-                    <>
-                        <Image
-                            style={[styles.tabButtonIcon, { tintColor: focused ? "#FFF" : "#BFB8B5" }]}
-                            source={imageSource}
-                            resizeMode="contain" />
-                        <TextCircularBold style={[styles.tabTitle, { color: focused ? "#FFF" : "#BFB8B5" }]}>{title}</TextCircularBold>
-                    </>
-                }
-
+                <Image
+                    style={[styles.tabButtonIcon, { tintColor: focused ? theme.colors.primaryColor : "#333333" }]}
+                    source={imageSource}
+                    resizeMode="contain" />
+                {/* <View style={styles.underline} /> */}
             </View>
         )
     }

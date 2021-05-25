@@ -32,10 +32,18 @@ module.exports = {
         cancelIcon: require('./icons/cancelIcon.png'),
         friendIcon: require('./icons/friendIcon.png'),
         privateIcon: require('./icons/privateIcon.png'),
-        publicIcon: require('./icons/publicIcon.png')
+        publicIcon: require('./icons/publicIcon.png'),
+        tiltBell: require('./icons/tiltBell.png'),
+
 
     },
     tabIcons: {
+        homeIcon: require('./tabIcons/homeIcon.png'),
+        usersIcon: require('./tabIcons/usersIcon.png'),
+
+        settingIcon: require('./tabIcons/settingIcon.png'),
+        playIcon: require('./tabIcons/playIcon.png'),
+        bellIcon: require('./tabIcons/bellIcon.png'),
 
 
     },

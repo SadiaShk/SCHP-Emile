@@ -6,6 +6,8 @@ import {
 import { connect } from 'react-redux';
 import AuthStackNavigator from './AuthNavigator';
 import { createStackNavigator } from '@react-navigation/stack';
+import HomeTabNavigator from './HomeTabNavigator';
+import { getOptions } from './navigationOptions';
 
 // import HomeTabNavigator from './HomeTabNavigator';
 
@@ -13,12 +15,13 @@ const RootStack = createStackNavigator();
 const RootStackNavigator = () => {
     return (
         <RootStack.Navigator
-            headerMode="none">
+            screenOptions={getOptions}
+            headerMode="screen">
 
 
             <RootStack.Screen
-                name="AuthStackNavigator"
-                component={AuthStackNavigator}
+                name="HomeTabNavigator"
+                component={HomeTabNavigator}
             />
 
 

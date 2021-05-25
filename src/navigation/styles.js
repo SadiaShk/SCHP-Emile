@@ -112,7 +112,31 @@ export default styles = StyleSheet.create({
     headerRow: {
         flexDirection: "row",
         alignItems: "center"
-    }
+    },
+    tabStyle: {
+        backgroundColor: theme.colors.darkPurple,
+        // height: 6 * vh,
+        borderBottomWidth: 0.04 * vh,
+        borderBottomColor: theme.colors.gray3,
 
+    },
+    tabIcon: {
+        height: 6.7 * vh,
+        width: 20 * vw,
+
+    },
+    homeTab: {
+        height: 6.7 * vh,
+        width: 20 * vw,
+
+    },
+
+    indicatorStyle: {
+        backgroundColor: theme.colors.primaryColor,
+        width: 10 * vw,
+        height: 0.4 * vh,
+        marginBottom: -0.1 * vh,
+        marginLeft: 5 * vw,
+    }
 
 })

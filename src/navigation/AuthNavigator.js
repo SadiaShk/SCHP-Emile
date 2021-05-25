@@ -12,7 +12,7 @@ import HomeScreen from '../screens/HomeScreen';
 const AuthStack = createStackNavigator();
 const AuthStackNavigator = () => {
     return (
-        <AuthStack.Navigator screenOptions={getOptions}>
+        <AuthStack.Navigator headerMode="none">
             <AuthStack.Screen
                 name="HomeScreen"
                 component={HomeScreen}

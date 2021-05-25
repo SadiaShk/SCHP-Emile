@@ -16,18 +16,27 @@ import theme from '../utils/units/theme';
 export const defaultOptions = (activeRouteName, props) => {
     return {
         headerStyle: {
-            height: 9.8 * vh,
+            height: 11 * vh,
             shadowColor: 'transparent',
-            elevation: 0,
-            backgroundColor: theme.colors.darkPurple
-
+            elevation: 2,
+            backgroundColor: theme.colors.darkPurple,
+            shadowColor: theme.colors.white,
+            shadowOffset: {
+                width: 0,
+                height: 3,
+            },
+            shadowOpacity: 0.17,
+            shadowRadius: 4.65,
+            paddingBottom: 3 * vh
         },
         headerRightContainerStyle: {
             paddingRight: 5 * vw,
+            paddingBottom: 1 * vh
+
         },
         headerLeftContainerStyle: {
             paddingLeft: 5 * vw,
-            // marginBottom: 3 * vh
+            paddingBottom: 1 * vh
 
         },
         headerRight: () => showRightButton(activeRouteName, props),
@@ -63,7 +72,7 @@ export const showRightButton = (activeRouteName, { navigation, route }) => {
 
 
             return null
-        case 'HomeScreen':
+        case 'HomeTabNavigator':
             return (
                 <View style={styles.headerRow}>
                     <IconButton onPress={() => { }}
@@ -79,7 +88,20 @@ export const showRightButton = (activeRouteName, { navigation, route }) => {
                 </View>
             )
         default:
-            return null
+            return (
+                <View style={styles.headerRow}>
+                    <IconButton onPress={() => { }}
+                        style={[styles.headerButtons]} icon={icons.searchIcon}
+                        iconStyle={{ marginLeft: -0.4 * vw, tintColor: theme.colors.white }}
+                        onPress={() => { }}
+                    />
+                    <IconButton onPress={() => { }}
+                        style={[styles.headerButtons]} icon={icons.chatBubble}
+                        iconStyle={{ marginLeft: -0.4 * vw, tintColor: theme.colors.white }}
+                        onPress={() => { }}
+                    />
+                </View>
+            )
         // <IconButton onPress={() => navigation.navigate("Notification")}
         //     style={[styles.headerButtons]} icon={icons.notification}
         // />
@@ -87,10 +109,10 @@ export const showRightButton = (activeRouteName, { navigation, route }) => {
     }
 };
 export const showLeftButton = (activeRouteName, { navigation, route }) => {
-    // console.log('activeRouteName, navigation', activeRouteName, navigation, route);
+    console.log('activeRouteName, navigation', activeRouteName);
 
     switch (activeRouteName) {
-        case 'HomeScreen':
+        case 'HomeTabNavigator':
 
             return (<View>
                 <TextCircularBold style={styles.titleText}>SCHP
@@ -98,8 +120,13 @@ export const showLeftButton = (activeRouteName, { navigation, route }) => {
                 </TextCircularBold>
             </View>
             );
-
-
+        default:
+            return (<View>
+                <TextCircularBold style={styles.titleText}>SCHP
+        <TextCircularBold style={[styles.titleText, styles.titleDot]}>.</TextCircularBold>
+                </TextCircularBold>
+            </View>
+            );
     }
     return (
         <IconButton onPress={() => navigation.pop()}
@@ -111,13 +138,15 @@ export const showLeftButton = (activeRouteName, { navigation, route }) => {
 };
 
 export const shouldHeaderBeShown = (activeRouteName) => {
+    console.log('activeRouteName, navigation', activeRouteName);
+
     switch (activeRouteName) {
-        case 'HomeScreen':
+        case 'HomeTabNavigator':
             return true;
 
 
         default:
-            return false;
+            return true;
     }
 };
 

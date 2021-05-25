@@ -107,6 +107,7 @@ export default StyleSheet.create({
     position: "absolute",
     bottom: 0,
     paddingHorizontal: 4 * vw,
+    backgroundColor: theme.colors.darkPurple
   },
   addPostTitle: {
     fontSize: 1.7 * vh
@@ -165,7 +166,7 @@ export default StyleSheet.create({
     padding: 0,
     marginTop: 2.5 * vh,
     borderRadius: 0,
-    backgroundColor: theme.colors.darkPurple,
+    backgroundColor: "transparent",
     marginBottom: 0.8 * vh
   },
   inputFieldStyle: {
@@ -199,7 +200,7 @@ export default StyleSheet.create({
     borderRadius: 2 * vw,
   },
   postInputView: {
-    paddingHorizontal: 4 * vw
+    paddingHorizontal: 4 * vw,
   },
   closeBtn: {
     width: 2 * vh,
