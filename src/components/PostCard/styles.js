@@ -163,7 +163,15 @@ const styles = StyleSheet.create({
     width: 46 * vw,
     height: 18 * vh,
     marginRight: 1 * vw,
-    marginBottom: 0.5 * vh
+    marginBottom: 1.7 * vh
+  },
+  blurView3: {
+    backgroundColor: "#24242491",
+    width: 92 * vw,
+    height: 18 * vh,
+    borderRadius: 1 * vw,
+    alignItems: "center",
+    justifyContent: "center"
   },
   multipleImagesRow: {
     flex: 1,
@@ -275,7 +283,20 @@ const styles = StyleSheet.create({
     color: theme.colors.gray3,
     marginTop: 0.4 * vh,
     width: 35 * vw,
-  }
+  },
+  playBtn: {
+    width: 4.5 * vh,
+    height: 4.5 * vh,
+    borderRadius: 4.5 / 2 * vh,
+    backgroundColor: theme.colors.lightPurple,
+    alignItems: "center",
+    justifyContent: "center"
+  },
+  playIcon: {
+    width: 2 * vh,
+    height: 2 * vh,
+    marginLeft: 1 * vw,
+  },
 
 });
 export default styles;

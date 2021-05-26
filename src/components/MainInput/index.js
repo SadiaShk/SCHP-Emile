@@ -105,7 +105,7 @@ class MainInput extends React.Component {
               onPress={this.props.rightIconPress}
             >
               <Image source={this.props.rightIcon}
-                style={[styles.rightIcon, this.props.rightIconStyle]}
+                style={[styles.rightIconStyle, this.props.rightIconStyle]}
               />
             </TouchableHOC>
           )}

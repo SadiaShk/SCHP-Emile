@@ -14,6 +14,7 @@ import SignupScreen from '../screens/SignupScreen';
 import PasswordRecovery from '../screens/PasswordRecovery';
 import NotificationScreen from '../screens/NotificationScreen';
 import LiveVideoScreen from '../screens/LiveVideoScreen';
+import FriendRequestListing from '../screens/FriendRequestListing';
 const HomeTabs = createMaterialTopTabNavigator();
 
 const HomeTabNavigator = (props) => {
@@ -61,8 +62,8 @@ const HomeTabNavigator = (props) => {
                     },
                 }}
 
-                name="HomeScreen"
-                component={HomeScreen}
+                name="FriendRequestListing"
+                component={FriendRequestListing}
 
             />
             <HomeTabs.Screen

@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
 
   label: {
     fontSize: 1.8 * vh,
-    color: theme.colors.primaryColor,
+    color: theme.colors.white,
     marginLeft: 2 * vw,
   },
   labelContainer: {
@@ -58,5 +58,10 @@ const styles = StyleSheet.create({
     resizeMode: "contain",
     marginRight: 4 * vw,
   },
+  rightIconStyle: {
+    height: 1.8 * vh,
+    width: 1.8 * vh,
+    resizeMode: "contain",
+  }
 });
 export default styles;

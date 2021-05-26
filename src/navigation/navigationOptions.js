@@ -95,10 +95,10 @@ export const showRightButton = (activeRouteName, { navigation, route }) => {
                         iconStyle={{ marginLeft: -0.4 * vw, tintColor: theme.colors.white }}
                         onPress={() => { }}
                     />
-                    <IconButton onPress={() => { }}
+                    <IconButton
                         style={[styles.headerButtons]} icon={icons.chatBubble}
                         iconStyle={{ marginLeft: -0.4 * vw, tintColor: theme.colors.white }}
-                        onPress={() => { }}
+                        onPress={() => navigation.navigate("HomeStackNavigator", { screen: "ChatListing" })}
                     />
                 </View>
             )
@@ -109,7 +109,7 @@ export const showRightButton = (activeRouteName, { navigation, route }) => {
     }
 };
 export const showLeftButton = (activeRouteName, { navigation, route }) => {
-    console.log('activeRouteName, navigation', activeRouteName);
+    console.log('activeRouteName, navigation', activeRouteName, route);
 
     switch (activeRouteName) {
         case 'HomeTabNavigator':

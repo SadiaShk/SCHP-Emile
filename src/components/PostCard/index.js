@@ -39,7 +39,138 @@ class PostCard extends React.Component {
   }
   renderPostCard = () => {
     switch (this.props.cardStyle) {
+      case 1:
+        return (
+          <View style={styles.postContainer}>
+            <View style={styles.userInfoRow}>
+              <View style={styles.row}>
+                <View style={styles.imageBorder}>
+                  <Image source={sampleImages.userImage} style={styles.userImage} />
+                </View>
+                <View>
+                  <TextCircularMedium style={styles.username}>{this.props.item.name}</TextCircularMedium>
+                  {this.props.item.isSponsored ?
+                    <View style={styles.row}>
+                      <Image source={icons.sponsoredIcon} style={styles.postDateIcon} />
+                      <TextCircularBook style={styles.postDate}>Sponsored</TextCircularBook>
+                    </View> :
+                    <View style={styles.row}>
+                      <Image source={icons.postDateIcon} style={styles.postDateIcon} />
+                      <TextCircularBook style={styles.postDate}>{this.props.item.date}</TextCircularBook>
+                    </View>
+                  }
+                </View>
+              </View>
 
+            </View>
+            {this.props.item.content ? <View style={styles.postTextView}>
+              <TextCircularBook
+                onTextLayout={(e) => this.onTextLayout(e)}
+                numberOfLines={this.state.showSeeMore == true ? undefined : 3}
+                style={styles.postText}>
+                {this.props.item.content}</TextCircularBook>
+
+              {this.state.lengthMore == true ?
+                <TextCircularBook style={styles.seeMoreText}
+                  onPress={() => this.toggleNumberOfLines()}
+                >{this.state.showSeeMore == true ? 'See Less...' : '...See More'}</TextCircularBook>
+                : null}
+
+            </View>
+              : null}
+            {this.props.item.isSponsored ?
+              <>
+                <ImageBackground source={sampleImages.sponsoredImage} style={styles.sponsoredImageView}
+                  imageStyle={styles.sponsoredImage}
+                >
+                  <LinearGradient
+                    style={styles.gradient}
+                    colors={['#FFFFFF10', '#08001090']}
+                    start={{ x: 0, y: 1 }}
+                    end={{ x: 1, y: 1 }}
+                  >
+                    <View style={styles.roomsBox}>
+                      <TextCircularBold style={styles.roomText}>4, 5 & 6 ROOMS</TextCircularBold>
+                      <TextCircularMedium style={styles.planDesc}>Luxury apartments & Duplexes</TextCircularMedium>
+                      <View style={styles.planLabelTitle}>
+                        <TextCircularMedium style={styles.planLabelText}>36 MONTHS INSTALLMENT PLAN</TextCircularMedium>
+                      </View>
+                    </View>
+                    <View>
+                      <TextCircularMedium style={styles.callTitle}>CALL NOW</TextCircularMedium>
+                      <TextCircularMedium style={styles.callNumber}>+123-456-789</TextCircularMedium>
+                      <TextCircularMedium style={styles.callNumber}>+123-456-789</TextCircularMedium>
+
+                    </View>
+                  </LinearGradient>
+                </ImageBackground>
+                <View style={styles.sposoredContentRow}>
+                  <View>
+                    <TextCircularMedium style={styles.sponsorTitle}>
+                      FORM ON FACEBOOK
+                </TextCircularMedium>
+                    <TextCircularMedium style={styles.planText}>3 Years Instalment Plan</TextCircularMedium>
+                  </View>
+                  <Button title="Learn More" style={styles.learnBtn} labelStyle={styles.learnBtnLabel} />
+                </View>
+              </>
+              :
+              this.props.item.images ?
+                this.props.item.images.length == 1 ?
+                  <Image source={this.props.item.images[0]} style={styles.postImage} />
+                  : <View style={styles.multipleImagesRow}>
+                    {this.props.item.images.map((val, index) => {
+                      return (
+                        index == 4 ?
+                          <ImageBackground source={val}
+                            style={[styles.postImage2,
+                            {
+                              width: index < 2 ? 46 * vw : 30.3 * vw,
+                              height: index < 2 ? 18 * vh : 11 * vh,
+                            }]}
+                            imageStyle={[styles.postImage2,
+                            {
+                              width: index < 2 ? 46 * vw : 30.3 * vw,
+                              height: index < 2 ? 18 * vh : 11 * vh,
+                            }]}
+                          >
+                            <TouchableHOC style={styles.blurView}>
+                              <TextCircularBook style={styles.additionalCount}>+3</TextCircularBook>
+                            </TouchableHOC>
+
+                          </ImageBackground>
+                          :
+                          <Image source={val} style={[styles.postImage2,
+                          {
+                            width: index < 2 ? 46 * vw : 30.3 * vw,
+                            height: index < 2 ? 18 * vh : 11 * vh,
+                          }]} />
+                      )
+                    })
+                    }
+                  </View> : this.props.item.videos ?
+                  <ImageBackground source={this.props.item.videos[0]}
+                    style={[styles.postImage2,
+                    {
+                      width: 92 * vw,
+                      height: 18 * vh,
+                    }]}
+                    imageStyle={[styles.postImage2,
+                    {
+                      width: 92 * vw,
+                      height: 18 * vh,
+                    }]}>
+                    <View style={styles.blurView3}>
+                      <TouchableHOC style={styles.playBtn} >
+                        <Image source={icons.playBtn} style={styles.playIcon} />
+                      </TouchableHOC>
+                    </View>
+                  </ImageBackground> : null
+            }
+
+          </View>
+        );
+        break;
       default:
         return (
           <View style={styles.postContainer}>

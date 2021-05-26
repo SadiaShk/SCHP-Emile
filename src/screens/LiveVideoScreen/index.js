@@ -120,7 +120,9 @@ class LiveVideoScreen extends React.Component {
             >
                 <View style={styles.headerRow}>
                     <TextCircularMedium style={styles.headerTitle}>Live</TextCircularMedium>
-                    <Button title="New" style={styles.newBtn} />
+                    <Button title="New" style={styles.newBtn}
+                        onPress={() => this.props.navigation.navigate("LiveVideoNew")}
+                    />
                 </View>
                 <View style={[styles.screenPadding, styles.sectionContainer]}>
                     <View style={styles.expandedRow}>
@@ -136,6 +138,7 @@ class LiveVideoScreen extends React.Component {
                 {this.state.postData.map((item, index) => {
                     return (
                         <PostCard item={item}
+                            cardStyle={1}
                             reactionPress={() => this.reactionPopup.show()}
                             onOptionPress={() => this.postOptionsPopup.show()}
                         />

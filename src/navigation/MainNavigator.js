@@ -8,6 +8,9 @@ import AuthStackNavigator from './AuthNavigator';
 import { createStackNavigator } from '@react-navigation/stack';
 import HomeTabNavigator from './HomeTabNavigator';
 import { getOptions } from './navigationOptions';
+import LiveVideoNew from '../screens/LiveVideoNew';
+import LiveViewVideo from '../screens/LiveViewVideo';
+import ChatScreen from '../screens/ChatScreen';
 
 // import HomeTabNavigator from './HomeTabNavigator';
 
@@ -24,7 +27,21 @@ const RootStackNavigator = () => {
                 component={HomeTabNavigator}
             />
 
+            <RootStack.Screen
+                name="LiveVideoNew"
+                component={LiveVideoNew}
+                options={{ headerShown: false }}
+            />
 
+            <RootStack.Screen
+                name="LiveViewVideo"
+                component={LiveViewVideo}
+                options={{ headerShown: false }}
+            />
+            <RootStack.Screen
+                name="ChatScreen"
+                component={ChatScreen}
+            />
         </RootStack.Navigator>
     );
 };

@@ -34,6 +34,15 @@ module.exports = {
         privateIcon: require('./icons/privateIcon.png'),
         publicIcon: require('./icons/publicIcon.png'),
         tiltBell: require('./icons/tiltBell.png'),
+        liveCamera: require('./icons/liveCamera.png'),
+        chatBubbleIcon: require('./icons/chatBubbleIcon.png'),
+        videoCamera: require('./icons/videoCamera.png'),
+        phoneIcon: require('./icons/phoneIcon.png'),
+
+        threeDotVertical: require('./icons/threeDotVertical.png'),
+        sendBtnIcon: require('./icons/sendBtnIcon.png'),
+        galleryImageIcon: require('./icons/galleryImageIcon.png'),
+        smileIcon: require('./icons/smileIcon.png'),
 
 
     },
@@ -60,7 +69,8 @@ module.exports = {
         postImage7: require('./sampleImages/postImage7.png'),
         postImage8: require('./sampleImages/postImage8.png'),
         sponsoredImage: require('./sampleImages/sponsoredImage.png'),
-
+        liveImage: require('./sampleImages/liveImage.png'),
+        liveImage2: require('./sampleImages/liveImage2.png'),
 
     }
 }
