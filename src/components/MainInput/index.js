@@ -82,7 +82,10 @@ class MainInput extends React.Component {
             {...this.props}
             secureTextEntry={secure}
             selectionColor={theme.colors.white}
-            style={[styles.field, { height: this.props.multiline ? 15 * vh : 5.5 * vh }, this.props.fieldStyle]}
+            style={[styles.field,
+            { height: this.props.multiline ? 15 * vh : 5.5 * vh },
+            { textAlignVertical: this.props.multiline ? "top" : "center" },
+            this.props.fieldStyle]}
           />
           {this.renderEye()}
           {this.props.rightIcon2 && (

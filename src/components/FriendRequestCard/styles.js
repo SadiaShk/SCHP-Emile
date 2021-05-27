@@ -14,9 +14,15 @@ export default style = StyleSheet.create({
         marginBottom: 1.8 * vh
     },
     userImage: {
-        width: 6 * vh,
-        height: 6 * vh,
+        width: 5.6 * vh,
+        height: 5.6 * vh,
         borderRadius: 6 / 2 * vh,
+        marginRight: 4 * vw
+    },
+    userImage2: {
+        width: 5.4 * vh,
+        height: 5.4 * vh,
+        borderRadius: 5.4 / 2 * vh,
         marginRight: 4 * vw
     },
     descText: {
@@ -46,8 +52,23 @@ export default style = StyleSheet.create({
         alignItems: "center",
         marginTop: 0.7 * vh
     },
+    rowstyle: {
+        flexDirection: "row",
+        alignItems: "center",
+    },
+    containerStyle2: {
+        justifyContent: "space-between",
+        marginBottom: 1.5 * vh, paddingBottom: 0
+    },
     confirmBtn: {
         width: 26 * vw,
+        height: 4 * vh,
+        paddingHorizontal: 2 * vw,
+        borderRadius: 1.5 * vw,
+        marginRight: 2 * vw,
+    },
+    removeBtn: {
+        width: 24 * vw,
         height: 4 * vh,
         paddingHorizontal: 2 * vw,
         borderRadius: 1.5 * vw,

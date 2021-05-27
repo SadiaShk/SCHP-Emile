@@ -29,13 +29,7 @@ class ExtendedHeader extends React.Component {
           </View>
         )
         break;
-      case 'MyProfile':
-        return (
-          <View style={styles.userCircle} key={this.props.scene.route.key}>
-            <Image source={sampleImages.userimg} style={styles.useravatar} />
-          </View>
-        )
-        break;
+
       case 'EditProfile':
         return (
           <View style={styles.userCircle} key={this.props.scene.route.key}>

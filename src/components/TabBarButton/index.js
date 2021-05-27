@@ -10,32 +10,33 @@ import vw from '../../utils/units/vw'
 import { tabIcons } from '../../assets/images'
 import TextCircularBold from '../TextCircularBold';
 import LinearGradient from 'react-native-linear-gradient';
+import TouchableHOC from '../TouchableHOC';
 
 class TabBarButton extends React.Component {
 
     render() {
         var imageSource = null;
         var title = null;
-        var titleColor = this.props.params.focused ? theme.colors.primaryColor : theme.colors.lightGrey;
-        var activeBg = this.props.params.focused ? "rgba(80,3,173,0.1)" : "transparent";
-        var focused = this.props.params.focused;
+        // var titleColor = this.props.params.focused ? theme.colors.primaryColor : theme.colors.lightGrey;
+        // var activeBg = this.props.params.focused ? "rgba(80,3,173,0.1)" : "transparent";
+        var focused = this.props.focused;
         switch (this.props.name) {
-            case 'Home': {
+            case "HomeStackNavigator": {
                 imageSource = tabIcons.homeIcon
                 title = "Home"
                 break
             }
-            case 'Users': {
+            case "FriendRequestListing": {
                 imageSource = tabIcons.usersIcon
                 title = "Users"
                 break
             }
-            case 'Play': {
+            case "LiveVideoScreen": {
                 imageSource = tabIcons.playIcon
                 title = "Play"
                 break
             }
-            case 'Notification': {
+            case "NotificationScreen": {
                 imageSource = tabIcons.bellIcon
                 title = "Notification"
                 break
@@ -49,16 +50,17 @@ class TabBarButton extends React.Component {
 
 
         return (
-            <View
+            <TouchableHOC
                 style={[styles.tabButtonContainer,]}
+                onPress={this.props.onPress}
             >
 
                 <Image
                     style={[styles.tabButtonIcon, { tintColor: focused ? theme.colors.primaryColor : "#333333" }]}
                     source={imageSource}
                     resizeMode="contain" />
-                {/* <View style={styles.underline} /> */}
-            </View>
+                {focused ? <View style={styles.underline} /> : null}
+            </TouchableHOC>
         )
     }
 }

@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
   },
   labelContainer: {
     width: '100%',
-    marginBottom: vh * 0.4,
+    marginBottom: vh * 0.6,
   },
   rightIconBtn: {
     marginRight: 4 * vw,

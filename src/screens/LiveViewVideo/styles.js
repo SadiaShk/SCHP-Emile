@@ -18,6 +18,7 @@ export default StyleSheet.create({
         backgroundColor: "rgba(0,0,0,0.3)",
         paddingHorizontal: 4 * vw,
         paddingTop: 8 * vh,
+        paddingBottom: 5 * vh,
         justifyContent: "space-between"
     },
     imageBg: {
@@ -96,6 +97,34 @@ export default StyleSheet.create({
         height: 1.8 * vh,
         resizeMode: "contain",
         marginRight: 1 * vw,
-    }
+    },
+    flatlistContainer: {
+        // flexDirection:"row",
+        paddingTop: 2 * vh,
+        alignSelf: "flex-end",
+        height: 30 * vh,
+    },
+    username: {
+        fontSize: 1.7 * vh,
+        color: theme.colors.white,
+        marginTop: 0.5 * vh
 
+    },
+    messageText: {
+        color: theme.colors.white,
+        fontSize: 1.6 * vh,
+        marginTop: 0.5 * vh
+    },
+    messageRow: {
+        flexDirection: "row",
+        alignItems: "flex-end",
+    },
+    userImg: {
+        width: 5 * vh,
+        height: 5 * vh,
+        borderRadius: 5 / 2 * vh,
+        marginRight: 3 * vw,
+        marginTop: 1.5 * vh,
+        resizeMode: "cover"
+    },
 })

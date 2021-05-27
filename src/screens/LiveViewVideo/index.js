@@ -27,72 +27,15 @@ class LiveViewVideo extends React.Component {
                 sampleImages.postImage3,
                 sampleImages.postImage4
             ],
-            postData: [
-                {
-                    userImage: sampleImages.userImage,
-                    name: "Mark Carson",
-                    date: "Posted on 10:00 am",
-                    content: "Lorem ipsum dolor sit amet, consectetur are it adipiscing elit. Aenean euismod bibendum laoreet.consectetur are it adipiscing elit. Aenean euismod bibendum laoreet.  Proin gravida dolor sitom",
-                    commentCount: 10,
-                    shareCount: 3,
-                    reactionCount: 150,
-                    isReactionLike: true,
-                    isReactionHeart: true,
-                    isReactionLaugh: true,
-                    videos: [
-                        sampleImages.postImage3,
-
-                    ],
-                },
-                {
-                    userImage: sampleImages.userImage,
-                    name: "Mark Carson",
-                    date: "Posted on 10:00 am",
-                    content: "Lorem ipsum dolor sit amet, consectetur are it adipiscing elit. Aenean euismod bibendum laoreet.consectetur are it adipiscing elit. Aenean euismod bibendum laoreet.  Proin gravida dolor sitom",
-                    commentCount: 10,
-                    shareCount: 3,
-                    reactionCount: 150,
-                    isReactionLike: true,
-                    isReactionHeart: true,
-                    isReactionLaugh: true,
-                    videos: [
-                        sampleImages.postImage3,
-
-                    ],
-                },
-                {
-                    userImage: sampleImages.userImage,
-                    name: "Mark Carson",
-                    date: "Posted on 10:00 am",
-                    content: "Lorem ipsum dolor sit amet, consectetur are it adipiscing elit. Aenean euismod bibendum laoreet.consectetur are it adipiscing elit. Aenean euismod bibendum laoreet.  Proin gravida dolor sitom",
-                    commentCount: 10,
-                    shareCount: 3,
-                    reactionCount: 150,
-                    isReactionLike: true,
-                    isReactionHeart: true,
-                    isReactionLaugh: true,
-                    videos: [
-                        sampleImages.postImage3,
-
-                    ],
-                },
-                {
-                    userImage: sampleImages.userImage,
-                    name: "Mark Carson",
-                    date: "Posted on 10:00 am",
-                    content: "Lorem ipsum dolor sit amet, consectetur are it adipiscing elit. Aenean euismod bibendum laoreet.consectetur are it adipiscing elit. Aenean euismod bibendum laoreet.  Proin gravida dolor sitom",
-                    commentCount: 10,
-                    shareCount: 3,
-                    reactionCount: 150,
-                    isReactionLike: true,
-                    isReactionHeart: true,
-                    isReactionLaugh: true,
-                    videos: [
-                        sampleImages.postImage3,
-
-                    ],
-                },
+            chat: [
+                { name: "John", message: "Hi there" },
+                { name: "John", message: "Hi there" },
+                { name: "John", message: "Hi there" },
+                { name: "John", message: "Hi there" },
+                { name: "John", message: "Hi there" },
+                { name: "John", message: "Hi there" },
             ]
+
 
 
         }
@@ -103,7 +46,16 @@ class LiveViewVideo extends React.Component {
 
 
     }
-
+    renderItem = ({ item }) => {
+        return (
+            <View style={styles.messageRow}>
+                <Image style={styles.userImg} source={sampleImages.userImage} />
+                <View>
+                    <TextCircularMedium style={styles.username}>{item.name}</TextCircularMedium>
+                    <TextCircularBook style={styles.messageText}>{item.message}</TextCircularBook>
+                </View>
+            </View>)
+    }
     render() {
 
         return (
@@ -125,7 +77,14 @@ class LiveViewVideo extends React.Component {
                         </View>
                         <View style={styles.headerRightView} />
                     </View>
+                    <MaskedViews element={<MaskedElement />}>
+                        <FlatList
+                            data={this.state.chat}
+                            style={styles.flatlistContainer}
 
+                            renderItem={this.renderItem}
+                        />
+                    </MaskedViews>
                 </View>
             </ImageBackground>
 

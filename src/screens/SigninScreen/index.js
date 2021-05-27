@@ -50,7 +50,9 @@ class SigninScreen extends React.Component {
                             <TextCircularBook style={styles.forgotText}>Forgot Password?</TextCircularBook>
                         </TouchableHOC>
                     </View>
-                    <Button title="Sign In" style={styles.signinBtn} />
+                    <Button title="Sign In" style={styles.signinBtn}
+                        onPress={() => this.props.navigation.navigate("DrawerNavigator")}
+                    />
                     <View style={styles.signupRow}>
                         <TextCircularBook style={styles.accountText}>Don't have an account? </TextCircularBook>
                         <TouchableHOC onPress={() => this.props.navigation.navigate("SignupScreen")}>

@@ -11,38 +11,28 @@ import { getOptions } from './navigationOptions';
 import LiveVideoNew from '../screens/LiveVideoNew';
 import LiveViewVideo from '../screens/LiveViewVideo';
 import ChatScreen from '../screens/ChatScreen';
+import DrawerNavigator from './DrawerNavigator';
 
 // import HomeTabNavigator from './HomeTabNavigator';
 
-const RootStack = createStackNavigator();
-const RootStackNavigator = () => {
+const MainStack = createStackNavigator();
+
+const MainStackNavigator = () => {
     return (
-        <RootStack.Navigator
-            screenOptions={getOptions}
-            headerMode="screen">
+        <MainStack.Navigator
+            headerMode="none">
 
-
-            <RootStack.Screen
-                name="HomeTabNavigator"
-                component={HomeTabNavigator}
+            <MainStack.Screen
+                name="AuthStackNavigator"
+                component={AuthStackNavigator}
+            />
+            <MainStack.Screen
+                name="DrawerNavigator"
+                component={DrawerNavigator}
             />
 
-            <RootStack.Screen
-                name="LiveVideoNew"
-                component={LiveVideoNew}
-                options={{ headerShown: false }}
-            />
 
-            <RootStack.Screen
-                name="LiveViewVideo"
-                component={LiveViewVideo}
-                options={{ headerShown: false }}
-            />
-            <RootStack.Screen
-                name="ChatScreen"
-                component={ChatScreen}
-            />
-        </RootStack.Navigator>
+        </MainStack.Navigator>
     );
 };
 
@@ -53,7 +43,7 @@ class MainNavigator extends React.Component {
 
 
     renderScreenArea = () => {
-        return <RootStackNavigator />;
+        return <MainStackNavigator />;
     };
     render() {
         return (

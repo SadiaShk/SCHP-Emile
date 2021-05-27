@@ -55,8 +55,14 @@ export default StyleSheet.create({
         fontSize: 1.45 * vh,
         color: theme.colors.gray3
     },
+    contentContainer: {
+        height: 74 * vh,
+        paddingTop: 4 * vh
+
+    },
     flatlist: {
-        paddingTop: 3 * vh
+        marginBottom: vh * 6,
+
     },
     fullWidthRow: {
         width: 92 * vw,
@@ -65,10 +71,10 @@ export default StyleSheet.create({
         marginBottom: 2 * vh
     },
     userImage: {
-        width: 6 * vh,
-        height: 6 * vh,
-        borderRadius: 6 / 2 * vh,
-        marginRight: 4 * vw
+        width: 5 * vh,
+        height: 5 * vh,
+        borderRadius: 5 / 2 * vh,
+        marginRight: 3 * vw
     },
     expandedRow: {
         flexDirection: "row",
@@ -125,6 +131,7 @@ export default StyleSheet.create({
         backgroundColor: theme.colors.black1,
         width: 92 * vw,
         height: 5.7 * vh,
+        marginLeft: 4 * vw,
         borderRadius: 5.7 / 2 * vh,
         paddingHorizontal: 3 * vw,
         alignItems: "center",
@@ -132,12 +139,62 @@ export default StyleSheet.create({
     },
     input: {
         width: 65 * vw,
-        fontSize: 1.75 * vh
+        fontSize: 1.75 * vh,
+        color: theme.colors.white
     },
     sentImg: {
         width: 2.3 * vh,
         height: 2.3 * vh,
         resizeMode: "contain",
         marginLeft: 2 * vw,
+    },
+    own: {
+        paddingHorizontal: vw * 2,
+        paddingVertical: vh * 1.2,
+        backgroundColor: theme.colors.primaryColor,
+        borderRadius: 3 * vw,
+        maxWidth: vw * 70
+    },
+    other: {
+        paddingHorizontal: vw * 2,
+        paddingVertical: vh * 1.2,
+        backgroundColor: theme.colors.black1,
+        borderRadius: 3 * vw,
+
+        maxWidth: vw * 70
+    },
+    message: {
+        fontSize: 1.7 * vh,
+        // flex: 1
+    },
+    listHeaderView: {
+        alignItems: "center",
+        justifyContent: "center",
+        marginBottom: 2 * vh
+    },
+    listFooterView: {
+        alignItems: "center",
+        justifyContent: "center",
+        marginTop: 2 * vh
+    },
+    headerTimeText: {
+        fontSize: 1.5 * vh,
+        color: theme.colors.gray7
+    },
+    cheatHead: {
+        flexDirection: "row",
+        alignItems: "center",
+        marginBottom: vh * 1,
+        marginBottom: 1 * vh
+    },
+    messageBoxPosition: {
+        position: "absolute",
+        bottom: 2 * vh,
+    },
+    timeText: {
+        fontSize: 1.8 * vh,
+        marginBottom: 1.3 * vh,
+        marginTop: 0.3 * vh,
+        alignSelf: "center"
     }
 })

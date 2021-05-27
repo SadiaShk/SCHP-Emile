@@ -44,6 +44,34 @@ export default class FriendRequestCard extends React.Component {
                     </View>
                 )
                 break;
+            case 3:
+                return (
+                    <View style={[styles.cardContainer, styles.containerStyle2]}>
+                        <View style={styles.rowstyle}>
+                            <Image source={sampleImages.userImage} style={styles.userImage2} />
+                            <TextCircularBook style={styles.userNameText}>Mark Carson</TextCircularBook>
+                        </View>
+                        <Button title="Remove" style={styles.removeBtn} />
+
+                    </View>
+                )
+                break;
+            case 4:
+                return (
+                    <View style={styles.cardContainer}>
+                        <Image source={sampleImages.userImage} style={styles.userImage} />
+                        <View>
+                            <TextCircularBook style={styles.descText}>Mark Carson</TextCircularBook>
+                            <TextCircularBook style={styles.timeText}>10 Mutual Friends</TextCircularBook>
+                            <View style={styles.row}>
+                                <Button title="Add" style={styles.confirmBtn} />
+                                <Button title="Remove" style={styles.deleteBtn} />
+
+                            </View>
+                        </View>
+                    </View>
+                )
+                break;
             default:
                 return (
                     <View style={styles.cardContainer}>

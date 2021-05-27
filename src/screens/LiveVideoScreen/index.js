@@ -139,6 +139,8 @@ class LiveVideoScreen extends React.Component {
                     return (
                         <PostCard item={item}
                             cardStyle={1}
+                            onPressProfile={() => this.props.navigation.navigate("FriendProfile")}
+
                             reactionPress={() => this.reactionPopup.show()}
                             onOptionPress={() => this.postOptionsPopup.show()}
                         />

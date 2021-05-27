@@ -27,10 +27,23 @@ class ChatScreen extends React.Component {
                 "My Contacts"
             ],
             chatMessage: [
-                { name: "Mark Carson", message: "Hello Can you please help me with one thing please help me with one thing?", date: "06/25/2021", time: "9:20 AM", own: true },
-                { name: "Mark Carson", message: "How you doing? every thing okay?", date: "06/25/2021", time: "9:20 AM", own: false },
-                { name: "Mark Carson", message: "I'm coming to New York next week...", date: "06/25/2021", time: "9:20 AM", own: false },
-                { name: "Mark Carson", message: "Thanks Bro?", date: "06/25/2021", time: "9:20 AM", own: true },
+                { name: "Mark Carson", message: "Lorem ipsum dolor sit amet, consetetur sadipscing", date: "06/25/2021", own: false },
+                {
+                    name: "Mark Carson", message: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.",
+                    date: "06/25/2021", time: "Mon at 12:20 pm", own: true
+                },
+                {
+                    name: "Mark Carson", message: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore.",
+                    date: "06/25/2021", own: false
+                },
+                {
+                    name: "Mark Carson", message: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.",
+                    date: "06/25/2021", time: "Tue at 10:30 am", own: true
+                },
+                {
+                    name: "Mark Carson", message: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore.",
+                    date: "06/25/2021", own: false
+                },
 
 
             ]
@@ -42,92 +55,50 @@ class ChatScreen extends React.Component {
 
 
     }
-    renderListItem = ({ item, index, type }) => {
 
-        return (
-            <View style={styles.fullWidthRow}>
-                <Image source={sampleImages.userImage} style={styles.userImage} />
-                <View>
-                    <View style={styles.expandedRow}>
-                        <TextCircularMedium style={styles.username}>Mark Carson</TextCircularMedium>
-                        <TextCircularBook style={styles.dateText}>3 days ago</TextCircularBook>
-                    </View>
-                    <View style={styles.messageRow}>
-                        <TextCircularMedium style={styles.messageText}
-                            numberOfLines={2}
-                        >Can you please share the abc project
-report with me..</TextCircularMedium>
-                        <View style={styles.msgCountBox}>
-                            <TextCircularBook style={styles.activeMsgCount}>3</TextCircularBook>
-                        </View>
-                    </View>
-                </View>
-            </View>
-        )
 
-    }
 
-    getMessagesData = () => {
-        let messages = [];
-
-        // console.log('this.props.Friends ',this.props.Friends);
-
-        if (this.props.route?.params?.id) {
-            if (this.props.Friends.length > 0) {
-                let foundFriend = this.props.Friends.find(
-                    (friend) => friend.id == this.props.route?.params?.id,
-                );
-
-                if (foundFriend) {
-                    messages = [...foundFriend.messages];
-                }
-            }
-        }
-
-        return [...messages];
-    };
     _renderItem = ({ item, index }) => {
-        item['own'] = item.fromid == this.props.chatId;
-
         item.image = !item.own ? this.props.route?.params?.image : null;
 
         return (
-            <View style={[{ alignItems: item.own ? 'flex-end' : 'flex-start' }]}>
-                <View
-                    style={[
-                        styles.cheatHead,
-                        { justifyContent: item.own ? 'flex-end' : 'flex-start' },
-                    ]}>
-                    {item.image ? (
-                        <TouchableHOC
-                            onPress={() => this.props.navigation.navigate('Profile', { item })}>
-                            <ImageBackground
-                                source={sampleImages.userImage}
-                                style={styles.userImage}
-                                resizeMode="stretch">
-                                <View style={[styles.onlineView]} />
-                            </ImageBackground>
-                        </TouchableHOC>
-                    ) : (
-                        <View style={{ marginRight: vw * 13 }} />
-                    )}
+            <View>
+                {item.time ? <TextCircularBook style={styles.timeText}>{item.time}</TextCircularBook> : null}
+                <View style={[{ alignItems: item.own ? 'flex-end' : 'flex-start' }]}>
                     <View
                         style={[
-                            { paddingVertical: vh * 0.8 },
-                            item.own ? styles.own : styles.other,
+                            styles.cheatHead,
+                            { justifyContent: item.own ? 'flex-end' : 'flex-start' },
                         ]}>
-                        <TextCircularBook
-                            style={[styles.message, { color: item.own ? 'white' : '#050E37' }]}
-                            numberOfLines={0}>
-                            {item.content}
-                        </TextCircularBook>
+                        {!item.own ? (
+                            <TouchableHOC
+                                onPress={() => this.props.navigation.navigate('Profile', { item })}>
+                                <ImageBackground
+                                    source={sampleImages.userImage}
+                                    style={styles.userImage}
+                                    imageStyle={styles.userImage}
+                                >
+                                    <View style={[styles.onlineView]} />
+                                </ImageBackground>
+                            </TouchableHOC>
+                        ) : (
+                            <View style={{ marginRight: vw * 13 }} />
+                        )}
+
+                        <View
+                            style={[
+                                { paddingVertical: vh * 0.8 },
+                                item.own ? styles.own : styles.other,
+                            ]}>
+                            <TextCircularBook
+                                style={[styles.message, { color: item.own ? 'white' : theme.colors.gray3 }]}
+                                numberOfLines={0}>
+                                {item.message}
+                            </TextCircularBook>
+                        </View>
                     </View>
+
                 </View>
-                {item.infoText && item.own && this.state.isOwner == false ? (
-                    <TextCircularBook style={[styles.infoText, { color: '#A4A7B6' }]}>
-                        Replied by Assistant
-                    </TextCircularBook>
-                ) : null}
             </View>
         );
     };
@@ -170,9 +141,10 @@ report with me..</TextCircularMedium>
                         keyExtractor={(item, index) => String(index)}
                     />
                     <KeyboardAvoidingView
+                        style={styles.messageBoxPosition}
                         enabled={Platform.OS == 'ios' ? true : false}
                         behavior="padding"
-                        keyboardVerticalOffset={Platform.OS === 'ios' ? 13.5 * vh : 4.4 * vh}>
+                        keyboardVerticalOffset={Platform.OS === 'ios' ? 18.5 * vh : 4.4 * vh}>
                         <View style={styles.chatBox}>
                             <TouchableHOC>
                                 <Image

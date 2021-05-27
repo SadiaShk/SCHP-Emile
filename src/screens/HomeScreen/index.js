@@ -151,6 +151,7 @@ class HomeScreen extends React.Component {
                 {this.state.postData.map((item, index) => {
                     return (
                         <PostCard item={item}
+                            onPressProfile={() => this.props.navigation.navigate("FriendProfile")}
                             reactionPress={() => this.reactionPopup.show()}
                             onOptionPress={() => this.postOptionsPopup.show()}
                         />

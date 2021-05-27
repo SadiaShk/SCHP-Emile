@@ -40,7 +40,9 @@ class WelcomeScreen extends React.Component {
                         <TextCircularBold numberOfLines={0} style={styles.getStartedText}>{"Let's Get\nStarted"}</TextCircularBold>
                         <TextCircularBook style={styles.sloganText}>Everythings works better together</TextCircularBook>
                     </View>
-                    <Button title="Login" />
+                    <Button title="Login"
+                        onPress={() => this.props.navigation.navigate("SigninScreen")}
+                    />
                 </View>
             </View>
 

@@ -7,7 +7,7 @@ import theme from '../utils/units/theme'
 import fonts, { Fonts } from '../assets/fonts'
 export default styles = StyleSheet.create({
 
-    drawerStyles: { flex: 1, width: '70%', backgroundColor: '#000000', opacity: 0.87 },
+    drawerStyles: { flex: 1, width: '70%', backgroundColor: '#080010' },
     drawerItem: { alignItems: 'flex-start', marginVertical: 0 },
     drawerLabel: { color: 'white', marginLeft: -16 },
     closeIcon: {
@@ -43,21 +43,33 @@ export default styles = StyleSheet.create({
     },
     option: {
         justifyContent: "center",
-        height: vh * 6,
+        height: vh * 5,
         width: 60 * vw,
-        borderBottomColor: "#403F3F",
-        borderBottomWidth: 0.2 * vh,
-        marginTop: 1.2 * vh
 
     },
     labelBox: {
         // flex: 1,
-        width: 45 * vw,
+        width: 50 * vw,
 
         height: 6 * vh,
         flexDirection: "row",
         justifyContent: "space-between",
         alignItems: "center",
+    },
+    drawerHeaderView: {
+        paddingLeft: 3 * vw,
+        borderBottomWidth: 0.04 * vh,
+        borderBottomColor: theme.colors.gray3,
+        paddingBottom: 4 * vh
+    },
+    userImageBorder: {
+        width: 6.7 * vh,
+        height: 6.7 * vh,
+        borderRadius: 6.7 / 2 * vh,
+        alignItems: "center",
+        justifyContent: "center",
+        borderWidth: 0.2 * vh,
+        borderColor: theme.colors.primaryColor
     },
     userImage: {
         width: 6 * vh,
@@ -65,13 +77,16 @@ export default styles = StyleSheet.create({
         borderRadius: 6 / 2 * vh
     },
     username: {
-        fontSize: 1.7 * vh,
-        color: theme.colors.primaryColor,
-        marginTop: 1.4 * vh
-    },
-    collegeName: {
-        fontSize: 1.5 * vh,
+        fontSize: 2 * vh,
         color: theme.colors.white,
+
+    },
+    editProfileTitle: {
+        fontSize: 1.74 * vh,
+        width: 35 * vw,
+        color: theme.colors.primaryColor,
+        textDecorationLine: "underline",
+
     },
     statsRow: {
         flexDirection: "row",
@@ -137,6 +152,29 @@ export default styles = StyleSheet.create({
         height: 0.4 * vh,
         marginBottom: -0.1 * vh,
         marginLeft: 5 * vw,
+    },
+    headerBtnView: {
+        width: 4 * vh,
+        height: 4 * vh,
+        borderRadius: 4 / 2 * vh,
+        backgroundColor: theme.colors.black1,
+        alignItems: "center",
+        justifyContent: "center",
+        marginLeft: 2.3 * vw,
+    },
+    headerBtnBackView: {
+        width: 4 * vh,
+        height: 4 * vh,
+        borderRadius: 4 / 2 * vh,
+        backgroundColor: theme.colors.black1,
+        alignItems: "center",
+        justifyContent: "center",
+        marginRight: 2.3 * vw,
+    },
+    searchIcon: {
+        width: 2.2 * vh,
+        height: 2.2 * vh,
+        resizeMode: "contain"
     }
 
 })

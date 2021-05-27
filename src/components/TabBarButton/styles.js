@@ -80,9 +80,9 @@ export default style = StyleSheet.create({
     },
     underline: {
         backgroundColor: theme.colors.primaryColor,
-        width: 6 * vw,
-        height: 0.3 * vh,
-        bottom: -0.3 * vh,
+        width: 10 * vw,
+        height: 0.25 * vh,
+        bottom: 0 * vh,
         position: "absolute"
     }
 

@@ -5,6 +5,8 @@ import { getOptions } from './navigationOptions';
 
 import HomeScreen from '../screens/HomeScreen';
 import ChatListing from '../screens/ChatListing';
+import EditProfile from '../screens/EditProfile';
+import ContactUs from '../screens/ContactUs';
 const HomeStack = createStackNavigator();
 const HomeStackNavigator = () => {
     return (
@@ -18,6 +20,14 @@ const HomeStackNavigator = () => {
             <HomeStack.Screen
                 name="ChatListing"
                 component={ChatListing}
+            />
+            <HomeStack.Screen
+                name="EditProfile"
+                component={EditProfile}
+            />
+            <HomeStack.Screen
+                name="ContactUs"
+                component={ContactUs}
             />
         </HomeStack.Navigator>
     );

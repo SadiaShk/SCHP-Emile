@@ -14,8 +14,8 @@ const AuthStackNavigator = () => {
     return (
         <AuthStack.Navigator headerMode="none">
             <AuthStack.Screen
-                name="HomeScreen"
-                component={HomeScreen}
+                name="WelcomeScreen"
+                component={WelcomeScreen}
             />
             <AuthStack.Screen
                 name="PasswordRecovery"
@@ -29,10 +29,7 @@ const AuthStackNavigator = () => {
                 name="SigninScreen"
                 component={SigninScreen}
             />
-            <AuthStack.Screen
-                name="WelcomeScreen"
-                component={WelcomeScreen}
-            />
+
 
 
         </AuthStack.Navigator>

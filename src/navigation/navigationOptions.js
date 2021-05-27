@@ -12,6 +12,7 @@ import TextCircularBold from '../components/TextCircularBold';
 import TextCircularBook from '../components/TextCircularBook';
 
 import theme from '../utils/units/theme';
+import TouchableHOC from '../components/TouchableHOC';
 
 export const defaultOptions = (activeRouteName, props) => {
     return {
@@ -90,16 +91,22 @@ export const showRightButton = (activeRouteName, { navigation, route }) => {
         default:
             return (
                 <View style={styles.headerRow}>
-                    <IconButton onPress={() => { }}
+                    {/* <IconButton onPress={() => { }}
                         style={[styles.headerButtons]} icon={icons.searchIcon}
                         iconStyle={{ marginLeft: -0.4 * vw, tintColor: theme.colors.white }}
-                        onPress={() => { }}
-                    />
-                    <IconButton
-                        style={[styles.headerButtons]} icon={icons.chatBubble}
-                        iconStyle={{ marginLeft: -0.4 * vw, tintColor: theme.colors.white }}
-                        onPress={() => navigation.navigate("HomeStackNavigator", { screen: "ChatListing" })}
-                    />
+                        onPress={() => navigation.navigate("SearchScreen")}
+                    /> */}
+                    <TouchableHOC style={styles.headerBtnView}
+                        onPress={() => navigation.navigate("SearchScreen")}
+                    >
+                        <Image source={icons.searchIcon} style={styles.searchIcon} />
+                    </TouchableHOC>
+                    <TouchableHOC style={styles.headerBtnView}
+                        onPress={() => navigation.navigate("ChatListing")}
+                    >
+                        <Image source={icons.chatBubble} style={styles.searchIcon} />
+                    </TouchableHOC>
+
                 </View>
             )
         // <IconButton onPress={() => navigation.navigate("Notification")}
@@ -117,6 +124,21 @@ export const showLeftButton = (activeRouteName, { navigation, route }) => {
             return (<View>
                 <TextCircularBold style={styles.titleText}>SCHP
                 <TextCircularBold style={[styles.titleText, styles.titleDot]}>.</TextCircularBold>
+                </TextCircularBold>
+            </View>
+            );
+        case 'MyProfile':
+        case 'FriendProfile':
+        case 'SearchScreen':
+            return (<View style={{ flexDirection: "row", alignItems: "center" }}>
+
+                <TouchableHOC style={styles.headerBtnBackView}
+                    onPress={() => navigation.goBack()}
+                >
+                    <Image source={icons.backArrow} style={styles.searchIcon} />
+                </TouchableHOC>
+                <TextCircularBold style={styles.titleText}>SCHP
+                    <TextCircularBold style={[styles.titleText, styles.titleDot]}>.</TextCircularBold>
                 </TextCircularBold>
             </View>
             );
@@ -171,10 +193,10 @@ export const getOptions = (props) => {
         ...TransitionPresets.SlideFromRightIOS,
         headerShown: shouldHeaderBeShown(activeRouteName),
         title: getTitle(activeRouteName, props),
-        ...(activeRouteName == 'Services' || activeRouteName == 'Signup' || activeRouteName == 'Menu'
-            || activeRouteName == "MyProfile" || activeRouteName == 'EditProfile' || activeRouteName == "ServiceDetail"
-            ? { header: (props) => <ExtendedHeader {...props} /> }
-            : null),
+        // ...(activeRouteName == 'Services' || activeRouteName == 'Signup' || activeRouteName == 'Menu'
+        //     || activeRouteName == 'EditProfile' || activeRouteName == "ServiceDetail"
+        //     ? { header: (props) => <ExtendedHeader {...props} /> }
+        //     : null),
         gestureEnabled: false,
     };
 };

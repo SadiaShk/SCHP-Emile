@@ -43,8 +43,19 @@ module.exports = {
         sendBtnIcon: require('./icons/sendBtnIcon.png'),
         galleryImageIcon: require('./icons/galleryImageIcon.png'),
         smileIcon: require('./icons/smileIcon.png'),
-
-
+        logoutIcon: require('./icons/logoutIcon.png'),
+        contactIcon: require('./icons/contactIcon.png'),
+        videoIcon: require('./icons/videoIcon.png'),
+        infoIcon: require('./icons/infoIcon.png'),
+        clockWhite: require('./icons/clockWhite.png'),
+        locationPin: require('./icons/locationPin.png'),
+        favBook: require('./icons/favBook.png'),
+        favColor: require('./icons/favColor.png'),
+        favMusic: require('./icons/favMusic.png'),
+        unCheckbox: require('./icons/unCheckbox.png'),
+        phoneWhiteIcon: require('./icons/phoneWhiteIcon.png'),
+        userAbout: require('./icons/userAbout.png'),
+        keyIcon: require('./icons/keyIcon.png'),
     },
     tabIcons: {
         homeIcon: require('./tabIcons/homeIcon.png'),
@@ -71,6 +82,9 @@ module.exports = {
         sponsoredImage: require('./sampleImages/sponsoredImage.png'),
         liveImage: require('./sampleImages/liveImage.png'),
         liveImage2: require('./sampleImages/liveImage2.png'),
+        profileImage: require('./sampleImages/profileImage.png'),
+        userImage2: require('./sampleImages/userImage2.png')
+
 
     }
 }

@@ -44,9 +44,9 @@ class PostCard extends React.Component {
           <View style={styles.postContainer}>
             <View style={styles.userInfoRow}>
               <View style={styles.row}>
-                <View style={styles.imageBorder}>
+                <TouchableHOC style={styles.imageBorder} onPress={this.props.onPressProfile}>
                   <Image source={sampleImages.userImage} style={styles.userImage} />
-                </View>
+                </TouchableHOC>
                 <View>
                   <TextCircularMedium style={styles.username}>{this.props.item.name}</TextCircularMedium>
                   {this.props.item.isSponsored ?
@@ -173,12 +173,12 @@ class PostCard extends React.Component {
         break;
       default:
         return (
-          <View style={styles.postContainer}>
+          <View style={[styles.postContainer, this.props.postContainer]}>
             <View style={styles.userInfoRow}>
               <View style={styles.row}>
-                <View style={styles.imageBorder}>
+                <TouchableHOC style={styles.imageBorder} onPress={this.props.onPressProfile}>
                   <Image source={sampleImages.userImage} style={styles.userImage} />
-                </View>
+                </TouchableHOC>
                 <View>
                   <TextCircularMedium style={styles.username}>{this.props.item.name}</TextCircularMedium>
                   {this.props.item.isSponsored ?
