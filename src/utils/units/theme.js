@@ -15,6 +15,7 @@ export default theme = {
         gray6: "#DDDDDD",
         lightGreen: "#2EDEB1",
         green1: "#6D6D00",
+        green2: "#53FE47",
         lightBlue: "#578FFE",
         lightRed: "#F44F64",
         lightYellow: "#F9D670",
