@@ -6,6 +6,7 @@ import { icons, sampleImages } from '../../assets/images'
 import styles from './styles'
 import TextCircularBook from '../TextCircularBook'
 import Button from '../Button'
+import TouchableHOC from '../TouchableHOC'
 
 export default class FriendRequestCard extends React.Component {
     render() {
@@ -69,6 +70,29 @@ export default class FriendRequestCard extends React.Component {
 
                             </View>
                         </View>
+                    </View>
+                )
+                break;
+            case 5:
+                return (
+                    <TouchableHOC style={[styles.cardContainer, styles.containerStyle2]}>
+                        <View style={styles.rowstyle}>
+                            <Image source={sampleImages.userImage} style={styles.userImage2} />
+                            <TextCircularBook style={styles.userNameText}>{this.props.item}</TextCircularBook>
+                        </View>
+                    </TouchableHOC>
+                )
+                break;
+            case 6:
+                return (
+                    <View style={[styles.cardContainer, styles.containerStyle2, this.props.cardContainerStyle]}>
+                        <View style={styles.rowstyle}>
+                            <Image source={sampleImages.userImage} style={styles.userImage2} />
+                            <TextCircularBook style={styles.userNameText}>{this.props.item}</TextCircularBook>
+                        </View>
+                        <TouchableHOC onPress={this.props.onPress}>
+                            <Image source={this.props.iconCheck} style={styles.checkbox} />
+                        </TouchableHOC>
                     </View>
                 )
                 break;

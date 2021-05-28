@@ -31,7 +31,7 @@ export default StyleSheet.create({
         fontSize: 2.1 * vh
     },
     participantsName: {
-        fontSize: 1.4 * vh,
+        fontSize: 1.45 * vh,
         color: theme.colors.gray5
     },
     backArrow: {
@@ -60,12 +60,14 @@ export default StyleSheet.create({
         color: theme.colors.gray3
     },
     contentContainer: {
-        height: 74 * vh,
-        paddingTop: 4 * vh
+        // flex: 1,
+        paddingTop: 3 * vh,
+        // paddingBottom: 8 * vh,
 
     },
     flatlist: {
         marginBottom: vh * 6,
+        height: 70 * vh,
 
     },
     fullWidthRow: {

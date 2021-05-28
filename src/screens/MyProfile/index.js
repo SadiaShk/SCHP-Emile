@@ -201,10 +201,12 @@ class MyProfile extends React.Component {
                         <Image source={icons.videoIcon} style={styles.photosIcon} />
                         <TextCircularBook style={styles.optionBtnLabel}>Videos</TextCircularBook>
                     </View>
-                    <View style={styles.profileOptionsBtn}>
+                    <TouchableHOC style={styles.profileOptionsBtn}
+                        onPress={() => this.props.navigation.navigate("FriendsList")}
+                    >
                         <Image source={icons.friendIcon} style={styles.photosIcon} />
                         <TextCircularBook style={styles.optionBtnLabel}>Friend</TextCircularBook>
-                    </View>
+                    </TouchableHOC>
                 </View>
                 <View style={styles.postRow}>
                     <Image source={sampleImages.userImage} style={styles.userImage} />

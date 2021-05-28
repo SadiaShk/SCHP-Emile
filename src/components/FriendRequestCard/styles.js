@@ -81,5 +81,10 @@ export default style = StyleSheet.create({
         borderRadius: 1.5 * vw,
         marginRight: 2 * vw,
         backgroundColor: theme.colors.black1
+    },
+    checkbox: {
+        width: 2 * vh,
+        height: 2 * vh,
+        resizeMode: "contain"
     }
 })

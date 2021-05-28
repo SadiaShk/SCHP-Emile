@@ -56,6 +56,11 @@ module.exports = {
         phoneWhiteIcon: require('./icons/phoneWhiteIcon.png'),
         userAbout: require('./icons/userAbout.png'),
         keyIcon: require('./icons/keyIcon.png'),
+        checkedboxGreen: require('./icons/checkedboxGreen.png'),
+        uncheckboxGray: require('./icons/uncheckboxGray.png'),
+        redCross: require('./icons/redCross.png'),
+        redCross2: require('./icons/redCross2.png'),
+        trashIcon2: require('./icons/trashIcon2.png')
     },
     tabIcons: {
         homeIcon: require('./tabIcons/homeIcon.png'),

@@ -31,7 +31,8 @@ const styles = StyleSheet.create({
   },
   leftIcon: {
     marginLeft: 4 * vw,
-    height: 1.5 * vh,
+    height: 2 * vh,
+    tintColor: theme.colors.gray3
   },
 
   label: {

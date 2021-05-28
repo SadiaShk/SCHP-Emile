@@ -16,6 +16,7 @@ import MyProfile from '../screens/MyProfile';
 import EditProfile from '../screens/EditProfile';
 import FriendProfile from '../screens/FriendProfile';
 import SearchScreen from '../screens/SearchScreen';
+import GroupChatScreen from '../screens/GroupChatScreen';
 
 
 const RootStack = createStackNavigator();
@@ -57,6 +58,10 @@ const RootStackNavigator = () => {
             <RootStack.Screen
                 name="ChatScreen"
                 component={ChatScreen}
+            />
+            <RootStack.Screen
+                name="GroupChatScreen"
+                component={GroupChatScreen}
             />
         </RootStack.Navigator>
     );

@@ -14,6 +14,7 @@ import FriendRequestCard from '../../components/FriendRequestCard';
 import PostCard from '../../components/PostCard';
 import MainInput from '../../components/MainInput';
 import theme from '../../utils/units/theme';
+import SelectedUsersPopup from '../../popups/SelectedUsersPopup';
 
 
 class GroupChatScreen extends React.Component {
@@ -90,7 +91,7 @@ class GroupChatScreen extends React.Component {
                                 { paddingVertical: vh * 0.8 },
                                 item.own ? styles.own : styles.other,
                             ]}>
-                            {item.own ? <TextCircularMedium style={styles.userMsgName}>Lisa</TextCircularMedium> : null}
+                            {!item.own ? <TextCircularMedium style={styles.userMsgName}>Lisa</TextCircularMedium> : null}
                             <TextCircularBook
                                 style={[styles.message, { color: item.own ? 'white' : theme.colors.gray3 }]}
                                 numberOfLines={0}>
@@ -107,6 +108,10 @@ class GroupChatScreen extends React.Component {
 
         return (
             <View style={styles.mainContainer}>
+                <SelectedUsersPopup
+                    ref={(e) => (this.selectedUsersPopup = e)}
+
+                />
                 <View style={styles.headerRow}>
                     <View style={styles.row}>
                         <TouchableHOC onPress={() => this.props.navigation.goBack()}>
@@ -118,13 +123,13 @@ class GroupChatScreen extends React.Component {
                         </View>
                     </View>
                     <View style={styles.row}>
-                        <TouchableHOC onPress={() => { }}>
+                        <TouchableHOC onPress={() => this.selectedUsersPopup.show()}>
                             <Image source={icons.videoCamera} style={styles.chatHeaderIcon} />
                         </TouchableHOC>
                         <TouchableHOC onPress={() => { }}>
                             <Image source={icons.phoneIcon} style={styles.chatHeaderIcon} />
                         </TouchableHOC>
-                        <TouchableHOC onPress={() => { }}>
+                        <TouchableHOC onPress={() => this.props.navigation.navigate("GroupInfoAdmin")}>
                             <Image source={icons.threeDotVertical} style={styles.chatHeaderIcon} />
                         </TouchableHOC>
                     </View>

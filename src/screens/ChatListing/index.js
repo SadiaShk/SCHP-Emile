@@ -82,7 +82,9 @@ report with me..</TextCircularMedium>
 
                     data={this.state.freindListing}
                     renderItem={(item, index) => this.renderListItem(item, index)} />
-                <TouchableHOC style={styles.chatBubble}>
+                <TouchableHOC style={styles.chatBubble}
+                    onPress={() => this.props.navigation.navigate("CreateChat")}
+                >
                     <Image source={icons.chatBubbleIcon} style={styles.chatIcon} />
                 </TouchableHOC>
             </View>
