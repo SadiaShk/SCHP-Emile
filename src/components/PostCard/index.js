@@ -51,11 +51,15 @@ class PostCard extends React.Component {
                   <TextCircularMedium style={styles.username}>{this.props.item.name}</TextCircularMedium>
                   {this.props.item.isSponsored ?
                     <View style={styles.row}>
-                      <Image source={icons.sponsoredIcon} style={styles.postDateIcon} />
+                      <TouchableHOC onPress={this.props.onPressPrivacy}>
+                        <Image source={icons.sponsoredIcon} style={styles.postDateIcon} />
+                      </TouchableHOC>
                       <TextCircularBook style={styles.postDate}>Sponsored</TextCircularBook>
                     </View> :
                     <View style={styles.row}>
-                      <Image source={icons.postDateIcon} style={styles.postDateIcon} />
+                      <TouchableHOC onPress={this.props.onPressPrivacy}>
+                        <Image source={icons.postDateIcon} style={styles.postDateIcon} />
+                      </TouchableHOC>
                       <TextCircularBook style={styles.postDate}>{this.props.item.date}</TextCircularBook>
                     </View>
                   }
@@ -183,11 +187,15 @@ class PostCard extends React.Component {
                   <TextCircularMedium style={styles.username}>{this.props.item.name}</TextCircularMedium>
                   {this.props.item.isSponsored ?
                     <View style={styles.row}>
-                      <Image source={icons.sponsoredIcon} style={styles.postDateIcon} />
+                      <TouchableHOC onPress={this.props.onPressPrivacy}>
+                        <Image source={icons.sponsoredIcon} style={styles.postDateIcon} />
+                      </TouchableHOC>
                       <TextCircularBook style={styles.postDate}>Sponsored</TextCircularBook>
                     </View> :
                     <View style={styles.row}>
-                      <Image source={icons.postDateIcon} style={styles.postDateIcon} />
+                      <TouchableHOC onPress={this.props.onPressPrivacy}>
+                        <Image source={icons.postDateIcon} style={styles.postDateIcon} />
+                      </TouchableHOC>
                       <TextCircularBook style={styles.postDate}>{this.props.item.date}</TextCircularBook>
                     </View>
                   }

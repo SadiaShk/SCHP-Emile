@@ -58,9 +58,16 @@ module.exports = {
         keyIcon: require('./icons/keyIcon.png'),
         checkedboxGreen: require('./icons/checkedboxGreen.png'),
         uncheckboxGray: require('./icons/uncheckboxGray.png'),
+        checkboxWhite: require('./icons/checkboxWhite.png'),
         redCross: require('./icons/redCross.png'),
         redCross2: require('./icons/redCross2.png'),
-        trashIcon2: require('./icons/trashIcon2.png')
+        trashIcon2: require('./icons/trashIcon2.png'),
+        addPhotoIcon: require('./icons/addPhotoIcon.png'),
+        profilePic: require('./icons/profilePic.png'),
+        voiceCall: require('./icons/voiceCall.png'),
+        callIcon: require('./icons/callIcon.png'),
+        microPhone: require('./icons/microPhone.png'),
+        videoCamera2: require('./icons/videoCamera2.png')
     },
     tabIcons: {
         homeIcon: require('./tabIcons/homeIcon.png'),

@@ -17,7 +17,7 @@ export default StyleSheet.create({
     minHeight: 18 * vh,
     paddingHorizontal: 4 * vw,
     paddingVertical: 2 * vh,
-    backgroundColor: 'white',
+    backgroundColor: theme.colors.darkPurple,
     alignItems: "center",
     justifyContent: "center",
     borderRadius: 3 * vw,
@@ -29,8 +29,8 @@ export default StyleSheet.create({
     paddingBottom: 3 * vh
   },
   crossIcon: {
-    height: 1.4 * vh,
-    width: 1.4 * vh,
+    height: 1.6 * vh,
+    width: 1.6 * vh,
     resizeMode: "contain"
   },
   crossBtn: {
@@ -43,7 +43,7 @@ export default StyleSheet.create({
     justifyContent: "center"
   },
   title: {
-    color: theme.colors.blue,
+    color: theme.colors.white,
     fontSize: 2.4 * vh,
     textAlign: "center",
     marginTop: 2 * vh
@@ -69,23 +69,40 @@ export default StyleSheet.create({
     marginTop: 1.6 * vh,
     textAlign: "center",
     fontSize: 1.7 * vh,
-    color: theme.colors.brown,
   },
   btnRow: {
-    width: 30 * vw,
+    width: "100%",
     flexDirection: "row",
     alignItems: "center",
-    marginTop: 2 * vh,
-    justifyContent: "space-between"
+    marginTop: 1 * vh,
+    marginBottom: 2 * vh,
+    justifyContent: "space-around",
+    paddingHorizontal: 10 * vw,
   },
   btnLabel: {
+  },
+  btnLabelNo: {
     color: theme.colors.primaryColor
   },
   yesbutton: {
+    maxWidth: 20 * vw,
+    height: 5 * vh,
+    marginTop: 2 * vh,
+    borderRadius: 1.5 * vw,
+  },
+  okBtn: {
     maxWidth: 30 * vw,
-    height: 5.5 * vh,
-    marginVertical: 2 * vh,
+    height: 5 * vh,
+    marginTop: 2 * vh,
+    borderRadius: 1.5 * vw,
+  },
+  nobutton: {
+    maxWidth: 20 * vw,
+    height: 5 * vh,
+    marginTop: 2 * vh,
+    borderRadius: 1.5 * vw,
     borderWidth: 0.3 * vh,
+    backgroundColor: theme.colors.darkPurple,
     borderColor: theme.colors.primaryColor
   },
   twoBtn: {

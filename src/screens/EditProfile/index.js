@@ -1,23 +1,16 @@
 import React from 'react'
-import { View, FlatList, Image, ImageBackground, } from 'react-native'
+import { View, FlatList, Image } from 'react-native'
 import styles from './styles'
 import { banners, icons, sampleImages } from '../../assets/images'
 import { connect } from 'react-redux';
 import SplashScreen from 'react-native-splash-screen';
-import TextCircularBold from '../../components/TextCircularBold';
 import TextCircularMedium from '../../components/TextCircularMedium';
 
 import TextCircularBook from '../../components/TextCircularBook';
 import Button from '../../components/Button';
 import MainInput from '../../components/MainInput';
-import PostCard from '../../components/PostCard';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
-import ViewReactionPopup from '../../popups/ViewReactionPopup';
-import CreatePostPopup from '../../popups/CreatePostPopup';
 import TouchableHOC from '../../components/TouchableHOC';
-import PostOptionsPopup from '../../popups/PostOptionsPopup';
-import PrivacyOptionsPopup from '../../popups/PrivacyOptionsPopup';
-import EditPostPopup from '../../popups/EditPostPopup';
 import CheckboxButton from '../../components/CheckboxButton';
 import FriendRequestCard from '../../components/FriendRequestCard';
 
@@ -30,8 +23,15 @@ class EditProfile extends React.Component {
                 sampleImages.userImage,
                 sampleImages.userImage,
                 sampleImages.userImage,
+                sampleImages.userImage,
+                sampleImages.userImage,
+                sampleImages.userImage,
+                sampleImages.userImage,
                 sampleImages.userImage
-            ]
+            ],
+            enableAuthentication: false,
+            allowFriendToPost: false,
+            allowAnyoneMessage: false
 
         }
     }
@@ -77,9 +77,22 @@ class EditProfile extends React.Component {
                         style={styles.inputField}
                         labelContainer={styles.inputLabelContainer}
                     />
-                    <CheckboxButton desc="Enable Two Step Authenication" />
-                    <CheckboxButton desc="Allow friends to post on your timeline" />
-                    <CheckboxButton desc="Allow anyone to send you a message" />
+                    <CheckboxButton desc="Enable Two Step Authenication"
+                        isSelected={this.state.enableAuthentication}
+
+                        onPressCheckbox={() => this.setState({ enableAuthentication: !this.state.enableAuthentication })}
+                    />
+                    <CheckboxButton desc="Allow friends to post on your timeline"
+                        isSelected={this.state.allowFriendToPost}
+
+                        onPressCheckbox={() => this.setState({ allowFriendToPost: !this.state.allowFriendToPost })}
+
+                    />
+                    <CheckboxButton desc="Allow anyone to send you a message"
+                        isSelected={this.state.allowAnyoneMessage}
+                        onPressCheckbox={() => this.setState({ allowAnyoneMessage: !this.state.allowAnyoneMessage })}
+
+                    />
 
                 </View>
                 <View style={[styles.screenPadding, styles.sectionBorder, styles.infoSection]}>
@@ -90,34 +103,42 @@ class EditProfile extends React.Component {
                             numberOfLines={0}
                         >Joined 2 Feb 2021</TextCircularBook>
                     </View>
-                    <View style={styles.infoRow}>
+                    <TouchableHOC style={styles.infoRow}
+                        onPress={() => this.props.navigation.navigate("EditProfileInnerScreens", { type: "myself" })}
+                    >
                         <Image source={icons.userAbout} style={styles.infoIcon} />
                         <TextCircularBook
                             style={styles.infoText}
                             numberOfLines={0}
                         >About Myself</TextCircularBook>
-                    </View>
-                    <View style={styles.infoRow}>
+                    </TouchableHOC>
+                    <TouchableHOC style={styles.infoRow}
+                        onPress={() => this.props.navigation.navigate("EditProfileInnerScreens", { type: "editPhone" })}
+
+                    >
                         <Image source={icons.phoneWhiteIcon} style={styles.infoIcon} />
                         <TextCircularBook
                             style={styles.infoText}
                             numberOfLines={0}
                         >Edit Phone</TextCircularBook>
-                    </View>
-                    <View style={styles.infoRow}>
+                    </TouchableHOC>
+                    <TouchableHOC style={styles.infoRow}
+                        onPress={() => this.props.navigation.navigate("EditProfileInnerScreens", { type: "editPass" })}
+
+                    >
                         <Image source={icons.keyIcon} style={styles.infoIcon} />
                         <TextCircularBook
                             style={styles.infoText}
                             numberOfLines={0}
                         >Edit Password</TextCircularBook>
-                    </View>
-                    <View style={styles.infoRow}>
+                    </TouchableHOC>
+                    <TouchableHOC style={styles.infoRow} onPress={() => this.props.navigation.navigate("FriendsList")}>
                         <Image source={icons.friendIcon} style={styles.infoIcon} />
                         <TextCircularBook
                             style={styles.infoText}
                             numberOfLines={0}
                         >Friends 507</TextCircularBook>
-                    </View>
+                    </TouchableHOC>
 
                 </View>
                 <View style={styles.friendSection}>
@@ -128,7 +149,9 @@ class EditProfile extends React.Component {
                         )
                     })}
                 </View>
-                <Button title="View more" style={styles.moreBtn} />
+                <Button title="View more" style={styles.moreBtn}
+                    onPress={() => this.props.navigation.navigate("FriendsList")}
+                />
             </KeyboardAwareScrollView>
 
         )

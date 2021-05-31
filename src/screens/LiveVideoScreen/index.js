@@ -12,6 +12,7 @@ import { ScrollView } from 'react-native-gesture-handler';
 import TouchableHOC from '../../components/TouchableHOC';
 import FriendRequestCard from '../../components/FriendRequestCard';
 import PostCard from '../../components/PostCard';
+import vh from '../../utils/units/vh';
 
 
 class LiveVideoScreen extends React.Component {
@@ -132,6 +133,7 @@ class LiveVideoScreen extends React.Component {
                         </TouchableHOC>
                     </View>
                     <FlatList horizontal
+                        style={{ marginBottom: 2 * vh }}
                         data={this.state.videos}
                         renderItem={this.videosItem} />
                 </View>

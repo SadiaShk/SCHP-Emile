@@ -19,6 +19,7 @@ export default style = StyleSheet.create({
         height: 2 * vh,
         resizeMode: "contain",
         marginRight: 4 * vw,
+        tintColor: theme.colors.white,
         ...Platform.select({
             android: {
                 marginTop: 0.35 * vh

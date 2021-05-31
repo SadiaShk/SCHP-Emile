@@ -65,6 +65,8 @@ export default class SelectedUsersPopup extends React.Component {
                 ...p,
                 visible: false
             }
+        }, () => {
+            this.props.navigation.navigate("GroupVideoCall", { callType: "groupVideo" })
         })
 
     }

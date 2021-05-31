@@ -54,7 +54,8 @@ const styles = StyleSheet.create({
     width: 1.7 * vh,
     height: 1.7 * vh,
     resizeMode: "contain",
-    marginRight: 2 * vw
+    marginRight: 2 * vw,
+    tintColor: theme.colors.gray3
   },
   optionBtn: {
     alignSelf: "flex-start"

@@ -72,14 +72,10 @@ class FriendsList extends React.Component {
                     </View>
 
                 </View >
-                <ScrollView contentContainerStyle={styles.screenPadding}>
+                <ScrollView contentContainerStyle={styles.screenPadding} >
 
                     {this.state.users.map((item, index) => {
-                        var selected = false
-                        let i = this.state.selectedParticipants.findIndex(x => x === item)
-                        if (i > -1) {
-                            selected = true
-                        }
+
                         return (
                             <FriendRequestCard cardStyle={3} item={item}
                                 onPress={() => { }}
@@ -90,6 +86,7 @@ class FriendsList extends React.Component {
                     })}
 
                 </ScrollView>
+                <Button title="View more" style={styles.moreBtn} />
             </View >
 
         )

@@ -110,6 +110,7 @@ class GroupChatScreen extends React.Component {
             <View style={styles.mainContainer}>
                 <SelectedUsersPopup
                     ref={(e) => (this.selectedUsersPopup = e)}
+                    navigation={this.props.navigation}
 
                 />
                 <View style={styles.headerRow}>
@@ -123,13 +124,13 @@ class GroupChatScreen extends React.Component {
                         </View>
                     </View>
                     <View style={styles.row}>
-                        <TouchableHOC onPress={() => this.selectedUsersPopup.show()}>
+                        <TouchableHOC style={styles.btnIcon} onPress={() => this.selectedUsersPopup.show()}>
                             <Image source={icons.videoCamera} style={styles.chatHeaderIcon} />
                         </TouchableHOC>
-                        <TouchableHOC onPress={() => { }}>
+                        <TouchableHOC style={styles.btnIcon} onPress={() => { }}>
                             <Image source={icons.phoneIcon} style={styles.chatHeaderIcon} />
                         </TouchableHOC>
-                        <TouchableHOC onPress={() => this.props.navigation.navigate("GroupInfoAdmin")}>
+                        <TouchableHOC style={styles.btnIcon} onPress={() => this.props.navigation.navigate("GroupInfoAdmin")}>
                             <Image source={icons.threeDotVertical} style={styles.chatHeaderIcon} />
                         </TouchableHOC>
                     </View>

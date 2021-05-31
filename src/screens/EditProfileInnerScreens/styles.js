@@ -9,21 +9,17 @@ export default StyleSheet.create({
     mainContainer: {
         flex: 1,
         backgroundColor: theme.colors.darkPurple,
-    },
-    screenPadding: {
-        paddingHorizontal: 4 * vw,
-        paddingBottom: 3 * vh,
-        paddingTop: 3 * vh,
-        // height: 50 * vh,
+
     },
     headerRow: {
-        paddingVertical: 2 * vh,
+        paddingVertical: 1.7 * vh,
         paddingHorizontal: 4 * vw,
         flexDirection: "row",
         alignItems: "center",
         justifyContent: "space-between",
         borderBottomWidth: 0.04 * vh,
         borderBottomColor: theme.colors.gray3,
+        marginBottom: 2 * vh
 
     },
     row: {
@@ -33,61 +29,66 @@ export default StyleSheet.create({
     headerTitle: {
         fontSize: 2.1 * vh
     },
-    participantsName: {
-        fontSize: 1.45 * vh,
-        color: theme.colors.gray5,
-        width: 45 * vw,
-    },
     backArrow: {
         width: 2.2 * vh,
         height: 2.2 * vh,
         resizeMode: "contain",
         marginRight: 2 * vw,
     },
+    postBtn: {
+        width: 28 * vw,
+        height: 4.6 * vh,
+        borderRadius: 1.5 * vw,
+    },
+    screenPadding: {
+        paddingHorizontal: 4 * vw,
+    },
+    sectionBorder: {
+        borderBottomColor: theme.colors.black1,
+        borderBottomWidth: 1.3 * vh,
+        paddingBottom: 1 * vh
+    },
     inputField: {
         borderRadius: 3 * vh
     },
-    flatlistContainer: {
-        marginTop: 3 * vh,
-    },
-    flatlist: {
-        // height: 48 * vh
+    messageInputField: {
+        paddingTop: 1.6 * vh,
+        borderRadius: 3 * vh
 
     },
-    nextBtn: {
-        width: 28 * vw,
-        height: 4.8 * vh,
-        paddingHorizontal: 2 * vw,
-        borderRadius: 1.6 * vw,
+    inputLabelContainer: {
+        marginLeft: 3 * vw
+    },
+    infoRow: {
+        width: "100%",
+        flexDirection: "row",
+        marginBottom: 1.7 * vh
+    },
+    infoIcon: {
+        width: 2.1 * vh,
+        height: 2.1 * vh,
+        tintColor: theme.colors.white,
+        resizeMode: "contain",
         marginRight: 3 * vw,
+        marginTop: 0.3 * vh
     },
-    trashBtn: {
-        width: 10 * vw,
-        height: 4.8 * vh,
-        backgroundColor: theme.colors.black1,
-        borderRadius: 1.6 * vw,
-        alignItems: "center",
-        justifyContent: "center"
+    infoText: {
+        fontSize: 1.85 * vh,
     },
-    trashIcon: {
-        width: 1.9 * vh,
-        height: 1.9 * vh,
-        resizeMode: "contain"
+    infoSection: {
+        paddingTop: 2 * vh
     },
-    leaveBtn: {
-        width: 90 * vw,
-        height: 5.3 * vh,
-        borderRadius: 1.6 * vw,
-        marginBottom: 2 * vh
+    friendSection: {
+        paddingTop: 2.6 * vh
     },
     moreBtn: {
         marginTop: 2 * vh,
         marginBottom: 4 * vh,
         height: 5 * vh,
         width: 86 * vw,
-        alignSelf: "center",
         borderRadius: 1.5 * vw,
 
+        alignSelf: "center",
         backgroundColor: theme.colors.black1
     }
 

@@ -86,6 +86,8 @@ export default StyleSheet.create({
         marginBottom: 4 * vh,
         height: 5 * vh,
         width: 86 * vw,
+        borderRadius: 1.5 * vw,
+
         alignSelf: "center",
         backgroundColor: theme.colors.black1
     }

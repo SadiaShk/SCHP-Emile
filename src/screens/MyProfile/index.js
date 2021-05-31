@@ -18,6 +18,8 @@ import TouchableHOC from '../../components/TouchableHOC';
 import PostOptionsPopup from '../../popups/PostOptionsPopup';
 import PrivacyOptionsPopup from '../../popups/PrivacyOptionsPopup';
 import EditPostPopup from '../../popups/EditPostPopup';
+import EditPrivacyOptionsPopup from '../../popups/EditPrivacyOptionsPopup';
+import ProfilePhotosPopup from '../../popups/ProfilePhotosPopup';
 
 
 class MyProfile extends React.Component {
@@ -124,6 +126,40 @@ class MyProfile extends React.Component {
         return (
             <KeyboardAwareScrollView style={styles.mainContainer}
             >
+                <ViewReactionPopup
+                    ref={(e) => (this.reactionPopup = e)}
+
+                />
+                <CreatePostPopup
+                    ref={(e) => (this.createPostPopup = e)}
+
+                />
+                <PostOptionsPopup
+                    ref={(e) => (this.postOptionsPopup = e)}
+                    onEditPress={() => this.editPostPopup.show()}
+                />
+                <PrivacyOptionsPopup
+                    ref={(e) => (this.privacyOptionsPopup = e)}
+                />
+                <EditPrivacyOptionsPopup
+                    ref={(e) => (this.editPrivacyOptionsPopup = e)}
+                />
+                <EditPostPopup
+                    ref={(e) => (this.editPostPopup = e)}
+                />
+                <ProfilePhotosPopup
+                    ref={(e) => (this.profilePhotosPopup = e)}
+                    title={"Photos"}
+                    onPressMedia={() => this.props.navigation.navigate("ViewPhoto", { mediaType: "image" })}
+
+                />
+                <ProfilePhotosPopup
+                    ref={(e) => (this.profileVideosPopup = e)}
+                    isVideos={true}
+                    title={"Videos"}
+                    onPressMedia={() => this.props.navigation.navigate("ViewPhoto", { mediaType: "video" })}
+
+                />
                 <View style={styles.profileInfo}>
                     <ImageBackground source={sampleImages.profileImage} style={styles.coverImageView}
                         imageStyle={styles.coverImage}
@@ -193,14 +229,18 @@ class MyProfile extends React.Component {
                 </View>
 
                 <View style={styles.profileOptionsRow}>
-                    <View style={styles.profileOptionsBtn}>
+                    <TouchableHOC style={styles.profileOptionsBtn}
+                        onPress={() => this.profilePhotosPopup.show()}
+                    >
                         <Image source={icons.galleryImageIcon} style={styles.photosIcon} />
                         <TextCircularBook style={styles.optionBtnLabel}>Photos</TextCircularBook>
-                    </View>
-                    <View style={styles.profileOptionsBtn}>
+                    </TouchableHOC>
+                    <TouchableHOC style={styles.profileOptionsBtn}
+                        onPress={() => this.profileVideosPopup.show()}
+                    >
                         <Image source={icons.videoIcon} style={styles.photosIcon} />
                         <TextCircularBook style={styles.optionBtnLabel}>Videos</TextCircularBook>
-                    </View>
+                    </TouchableHOC>
                     <TouchableHOC style={styles.profileOptionsBtn}
                         onPress={() => this.props.navigation.navigate("FriendsList")}
                     >
@@ -216,29 +256,13 @@ class MyProfile extends React.Component {
                         />
                     </TouchableHOC>
                 </View>
-                <ViewReactionPopup
-                    ref={(e) => (this.reactionPopup = e)}
 
-                />
-                <CreatePostPopup
-                    ref={(e) => (this.createPostPopup = e)}
-
-                />
-                <PostOptionsPopup
-                    ref={(e) => (this.postOptionsPopup = e)}
-                    onEditPress={() => this.editPostPopup.show()}
-                />
-                <PrivacyOptionsPopup
-                    ref={(e) => (this.privacyOptionsPopup = e)}
-                />
-                <EditPostPopup
-                    ref={(e) => (this.editPostPopup = e)}
-                />
                 {this.state.postData.map((item, index) => {
                     return (
                         <PostCard item={item}
                             reactionPress={() => this.reactionPopup.show()}
                             onOptionPress={() => this.postOptionsPopup.show()}
+                            onPressPrivacy={() => this.editPrivacyOptionsPopup.show()}
                         />
                     )
                 })}

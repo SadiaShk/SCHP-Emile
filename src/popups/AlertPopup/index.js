@@ -11,10 +11,9 @@ import vh from '../../utils/units/vh'
 import Button from '../../components/Button'
 
 import theme from '../../utils/units/theme'
-import TextRegular from '../../components/TextRegular'
-import RobotoMedium from '../../components/RobotoMedium'
+import TextCircularMedium from '../../components/TextCircularMedium'
 
-import TextCircularBold from '../../components/TextCircularBold'
+import TextCircularBook from '../../components/TextCircularBook'
 import TouchableHOC from '../../components/TouchableHOC'
 export default class AlertPopup extends React.Component {
     constructor(props) {
@@ -81,18 +80,19 @@ export default class AlertPopup extends React.Component {
         if (this.props.onSuccess2) {
             return (
                 <View style={styles.btnRow} >
-                    <TouchableHOC style={styles.btnView} onPress={() => this.dismissPopup()} >
-                        <RobotoMedium style={styles.btnText}>No</RobotoMedium>
-                    </TouchableHOC>
-                    <TouchableHOC style={styles.btnView} onPress={() => this.hide2()} >
-                        <RobotoMedium style={styles.btnText}>Yes</RobotoMedium>
-                    </TouchableHOC>
+                    <Button title={this.props.btnText ? this.props.btnText : "No"}
+                        style={[styles.nobutton]} labelStyle={styles.btnLabelNo}
+                        onPress={() => this.dismissPopup()} />
+                    <Button title={this.props.btnText ? this.props.btnText : "Yes"}
+                        style={[styles.yesbutton]} labelStyle={styles.btnLabel}
+                        onPress={() => this.hide2()} />
+
                 </View>
             )
         }
         else if (this.props.onPressBtn1) {
             return <Button title={this.props.btnText ? this.props.btnText : "OK"}
-                style={[styles.yesbutton]} labelStyle={styles.btnLabel} onPress={() => this.hidePopup()} />
+                style={[styles.okBtn]} labelStyle={styles.btnLabel} onPress={() => this.hidePopup()} />
 
         }
         else if (this.props.dismiss) {
@@ -114,14 +114,13 @@ export default class AlertPopup extends React.Component {
                 </TouchableHOC>
                 <View style={styles.modalContainer}>
                     <TouchableHOC onPress={this.dismissPopup} style={styles.crossBtn} >
-                        <Image source={icons.crossIcon} style={styles.crossIcon} />
+                        <Image source={icons.redCross2} style={styles.crossIcon} />
                     </TouchableHOC>
                     {this.props.icon ? <Image source={this.props.icon ? this.props.icon : icons.checkCircle2} style={styles.check} /> : null}
 
-                    {this.props.titleText ? <View style={styles.titleBox}><TextCircularBold style={styles.title}>{this.props.titleText}</TextCircularBold>
-                        <View style={styles.underline} />
+                    {this.props.titleText ? <View style={styles.titleBox}><TextCircularMedium style={styles.title}>{this.props.titleText}</TextCircularMedium>
                     </View> : null}
-                    <TextCircularBold style={styles.paymentText} numberOfLines={0}>{this.props.description}</TextCircularBold>
+                    <TextCircularBook style={styles.paymentText} numberOfLines={0}>{this.props.description}</TextCircularBook>
 
                     {this.renderBtns()}
                     <Image source={icons.basketBall} style={styles.basketBall} />

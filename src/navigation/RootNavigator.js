@@ -17,6 +17,9 @@ import EditProfile from '../screens/EditProfile';
 import FriendProfile from '../screens/FriendProfile';
 import SearchScreen from '../screens/SearchScreen';
 import GroupChatScreen from '../screens/GroupChatScreen';
+import FriendsList from '../screens/FriendsList';
+import ViewPhoto from '../screens/ViewPhoto';
+import GroupVideoCall from '../screens/GroupVideoCall';
 
 
 const RootStack = createStackNavigator();
@@ -44,12 +47,26 @@ const RootStackNavigator = () => {
                 options={{ headerShown: false }}
             />
             <RootStack.Screen
+                name="ViewPhoto"
+                component={ViewPhoto}
+                options={{ headerShown: false }}
+            />
+            <RootStack.Screen
+                name="GroupVideoCall"
+                component={GroupVideoCall}
+                options={{ headerShown: false }}
+            />
+            <RootStack.Screen
                 name="MyProfile"
                 component={MyProfile}
             />
             <RootStack.Screen
                 name="FriendProfile"
                 component={FriendProfile}
+            />
+            <RootStack.Screen
+                name="FriendsList"
+                component={FriendsList}
             />
             <RootStack.Screen
                 name="SearchScreen"

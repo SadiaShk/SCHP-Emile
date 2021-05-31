@@ -40,11 +40,14 @@ export default StyleSheet.create({
         resizeMode: "contain",
         marginRight: 2 * vw,
     },
+    btnIcon: {
+        marginLeft: 2 * vw,
+
+    },
     chatHeaderIcon: {
         width: 2.4 * vh,
         height: 2.4 * vh,
         resizeMode: "contain",
-        marginLeft: 2 * vw,
     },
     titleView: {
         backgroundColor: theme.colors.black1,

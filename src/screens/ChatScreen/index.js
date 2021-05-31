@@ -6,13 +6,7 @@ import { connect } from 'react-redux';
 import SplashScreen from 'react-native-splash-screen';
 import TextCircularBook from '../../components/TextCircularBook';
 import TextCircularMedium from '../../components/TextCircularMedium';
-import Button from '../../components/Button';
-import NotificationCard from '../../components/NotificationCard';
-import { ScrollView } from 'react-native-gesture-handler';
 import TouchableHOC from '../../components/TouchableHOC';
-import FriendRequestCard from '../../components/FriendRequestCard';
-import PostCard from '../../components/PostCard';
-import MainInput from '../../components/MainInput';
 import theme from '../../utils/units/theme';
 
 
@@ -115,13 +109,15 @@ class ChatScreen extends React.Component {
                         <TextCircularMedium style={styles.headerTitle}>User Name</TextCircularMedium>
                     </View>
                     <View style={styles.row}>
-                        <TouchableHOC onPress={() => { }}>
+                        <TouchableHOC style={styles.btnIcon} onPress={() => this.props.navigation.navigate("GroupVideoCall", { callType: "video" })}>
                             <Image source={icons.videoCamera} style={styles.chatHeaderIcon} />
                         </TouchableHOC>
-                        <TouchableHOC onPress={() => { }}>
+                        <TouchableHOC style={styles.btnIcon}
+                            onPress={() => this.props.navigation.navigate("GroupVideoCall", { callType: "call" })}
+                        >
                             <Image source={icons.phoneIcon} style={styles.chatHeaderIcon} />
                         </TouchableHOC>
-                        <TouchableHOC onPress={() => { }}>
+                        <TouchableHOC style={styles.btnIcon} onPress={() => { }}>
                             <Image source={icons.threeDotVertical} style={styles.chatHeaderIcon} />
                         </TouchableHOC>
                     </View>

@@ -40,7 +40,10 @@ export default StyleSheet.create({
         width: 2.4 * vh,
         height: 2.4 * vh,
         resizeMode: "contain",
+    },
+    btnIcon: {
         marginLeft: 2 * vw,
+
     },
     titleView: {
         backgroundColor: theme.colors.black1,

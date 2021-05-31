@@ -12,6 +12,7 @@ import AddParticipant from '../screens/AddParticipant';
 import CreateGroup from '../screens/CreateGroup';
 import GroupInfoAdmin from '../screens/GroupInfoAdmin';
 import FriendsList from '../screens/FriendsList';
+import EditProfileInnerScreens from '../screens/EditProfileInnerScreens';
 const HomeStack = createStackNavigator();
 const HomeStackNavigator = () => {
     return (
@@ -45,6 +46,10 @@ const HomeStackNavigator = () => {
             <HomeStack.Screen
                 name="FriendsList"
                 component={FriendsList}
+            />
+            <HomeStack.Screen
+                name="EditProfileInnerScreens"
+                component={EditProfileInnerScreens}
             />
             <HomeStack.Screen
                 name="EditProfile"

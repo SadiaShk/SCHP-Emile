@@ -12,9 +12,8 @@ export default StyleSheet.create({
     },
     screenPadding: {
         paddingHorizontal: 4 * vw,
-        paddingBottom: 3 * vh,
         paddingTop: 3 * vh,
-        // height: 50 * vh,
+        paddingBottom: 3 * vh
     },
     headerRow: {
         paddingVertical: 2 * vh,
@@ -22,8 +21,10 @@ export default StyleSheet.create({
         flexDirection: "row",
         alignItems: "center",
         justifyContent: "space-between",
-        borderBottomWidth: 0.04 * vh,
-        borderBottomColor: theme.colors.gray3,
+        width: 100 * vw,
+        top: 5 * vh,
+        left: 0 * vw,
+        position: "absolute"
 
     },
     row: {
@@ -33,11 +34,7 @@ export default StyleSheet.create({
     headerTitle: {
         fontSize: 2.1 * vh
     },
-    participantsName: {
-        fontSize: 1.45 * vh,
-        color: theme.colors.gray5,
-        width: 45 * vw,
-    },
+
     backArrow: {
         width: 2.2 * vh,
         height: 2.2 * vh,
@@ -48,47 +45,56 @@ export default StyleSheet.create({
         borderRadius: 3 * vh
     },
     flatlistContainer: {
-        marginTop: 3 * vh,
+        marginTop: 2 * vh,
     },
     flatlist: {
         // height: 48 * vh
 
     },
-    nextBtn: {
-        width: 28 * vw,
-        height: 4.8 * vh,
-        paddingHorizontal: 2 * vw,
-        borderRadius: 1.6 * vw,
-        marginRight: 3 * vw,
-    },
-    trashBtn: {
-        width: 10 * vw,
-        height: 4.8 * vh,
-        backgroundColor: theme.colors.black1,
-        borderRadius: 1.6 * vw,
+    imageView: {
+        width: 100 * vw,
+        height: 100 * vh,
         alignItems: "center",
         justifyContent: "center"
     },
-    trashIcon: {
-        width: 1.9 * vh,
-        height: 1.9 * vh,
-        resizeMode: "contain"
+    verticalDots: {
+        width: 2.5 * vh,
+        height: 2.5 * vh,
+        resizeMode: "contain",
+        tintColor: theme.colors.white
     },
-    leaveBtn: {
-        width: 90 * vw,
-        height: 5.3 * vh,
-        borderRadius: 1.6 * vw,
-        marginBottom: 2 * vh
+    playBtn: {
+        width: 7 * vh,
+        height: 7 * vh,
+        borderRadius: 7 / 2 * vh,
+        backgroundColor: theme.colors.lightPurple,
+        alignItems: "center",
+        justifyContent: "center"
     },
-    moreBtn: {
-        marginTop: 2 * vh,
-        marginBottom: 4 * vh,
-        height: 5 * vh,
-        width: 86 * vw,
-        alignSelf: "center",
-        borderRadius: 1.5 * vw,
+    playIcon: {
+        width: 2.5 * vh,
+        height: 2.5 * vh,
+        marginLeft: 1 * vw,
+    },
+    descView: {
+        position: "absolute",
+        bottom: 0,
+        backgroundColor: "rgba(0,0,0,0.5)",
+        width: 100 * vw,
+        minHeight: 26 * vh,
+        borderTopLeftRadius: 3 * vw,
+        borderTopRightRadius: 3 * vw,
+        paddingVertical: 3 * vh,
+        paddingHorizontal: 4 * vw,
+    },
+    titleText: {
+        fontSize: 1.85 * vh,
+        marginBottom: 1 * vh
 
-        backgroundColor: theme.colors.black1
+    },
+    descText: {
+        fontSize: 1.75 * vh,
+
     }
 
 })

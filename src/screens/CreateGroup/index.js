@@ -1,19 +1,15 @@
 import React from 'react'
-import { View, FlatList, Image, ImageBackground, KeyboardAvoidingView, TextInput, } from 'react-native'
+import { View, FlatList, Image } from 'react-native'
 import styles from './styles'
 import { banners, icons, sampleImages } from '../../assets/images'
 import { connect } from 'react-redux';
 import SplashScreen from 'react-native-splash-screen';
-import TextCircularBook from '../../components/TextCircularBook';
 import TextCircularMedium from '../../components/TextCircularMedium';
 import Button from '../../components/Button';
-import NotificationCard from '../../components/NotificationCard';
 import { ScrollView } from 'react-native-gesture-handler';
 import TouchableHOC from '../../components/TouchableHOC';
 import FriendRequestCard from '../../components/FriendRequestCard';
-import PostCard from '../../components/PostCard';
 import MainInput from '../../components/MainInput';
-import theme from '../../utils/units/theme';
 
 
 class CreateGroup extends React.Component {

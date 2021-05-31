@@ -14,10 +14,10 @@ export default StyleSheet.create({
   },
   modalContainer: {
     width: 100 * vw,
-    minHeight: 26 * vh,
+    minHeight: 28 * vh,
     paddingVertical: 2 * vh,
-    paddingHorizontal: 4 * vw,
     backgroundColor: theme.colors.darkPurple,
+    paddingHorizontal: 4 * vw,
     // alignItems: "center",
     // justifyContent: "center",
     position: 'absolute',

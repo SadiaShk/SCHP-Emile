@@ -10,7 +10,6 @@ export default StyleSheet.create({
         flex: 1,
         backgroundColor: theme.colors.darkPurple,
         paddingTop: 3 * vh,
-        paddingHorizontal: 4 * vw
 
     },
     titleSearch: {

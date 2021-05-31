@@ -33,7 +33,7 @@ export default class CheckboxButton extends React.Component {
                     onPress={() => props.onPressCheckbox()}
                 >
                     {this.props.isSelected ?
-                        <Image source={icons.unCheckbox} style={styles.checkboxStyle} /> :
+                        <Image source={icons.checkboxWhite} style={styles.checkboxStyle} /> :
                         <Image source={icons.unCheckbox} style={styles.checkboxStyle} />
                     }
                 </TouchableHOC>
