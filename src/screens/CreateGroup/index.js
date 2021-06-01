@@ -10,6 +10,7 @@ import { ScrollView } from 'react-native-gesture-handler';
 import TouchableHOC from '../../components/TouchableHOC';
 import FriendRequestCard from '../../components/FriendRequestCard';
 import MainInput from '../../components/MainInput';
+import { StackActions } from '@react-navigation/native';
 
 
 class CreateGroup extends React.Component {
@@ -66,7 +67,10 @@ class CreateGroup extends React.Component {
                         </View>
                     </View>
                     <Button title="Create" style={styles.nextBtn}
-                        onPress={() => this.props.navigation.navigate("GroupChatScreen")}
+                        onPress={() =>
+                            this.props.navigation.navigate("GroupChatScreen")
+
+                        }
                     />
                 </View >
                 <ScrollView contentContainerStyle={styles.screenPadding}>

@@ -46,7 +46,13 @@ export default class CreatePostPopup extends React.Component {
                 "30 seconds",
                 "Unlimited"
             ],
-            postText: "Lorem ipsum dolor sit amet, consetetur are it adipiscing elit. Aenean euismod bibendum laoreet. Proin"
+            postText: "Lorem ipsum dolor sit amet, consetetur are it adipiscing elit. Aenean euismod bibendum laoreet. Proin",
+            postOption: [
+                { option: "Private", image: icons.privateIcon },
+                { option: "Public", image: icons.publicIcon },
+                { option: "My Friends", image: icons.friendIcon }
+            ],
+            showPrivacy: false,
         }
     }
 
@@ -253,6 +259,91 @@ export default class CreatePostPopup extends React.Component {
                 break;
         }
     }
+    renderPost = () => {
+        return (
+            <View style={{ flex: 1, paddingBottom: 8 * vh }}>
+                <View style={styles.headerRow}>
+                    <View style={styles.row}>
+                        <TouchableHOC style={styles.backBtn} onPress={this.dismissPopup}>
+                            <Image source={icons.backArrow} style={styles.backIcon} />
+                        </TouchableHOC>
+                        <TextCircularMedium style={styles.popupTitle}>Create Post</TextCircularMedium>
+                    </View>
+                    <Button title="Post" style={styles.postBtn} onPress={this.dismissPopup} />
+                </View>
+                <View style={styles.addPostImageRow}>
+                    <TextCircularBook style={styles.addPostTitle}>Add to your post</TextCircularBook>
+                    <View style={styles.row}>
+                        <TouchableHOC style={styles.galleryBtn} onPress={() => this.setState({ postStyle: 1 })}>
+                            <Image source={icons.galleryIcon} style={styles.galleryIcon} />
+                        </TouchableHOC>
+                        <TouchableHOC style={styles.galleryBtn} onPress={() => this.setState({ postStyle: 2 })}>
+                            <Image source={icons.videoCamIcon} style={styles.galleryIcon} />
+                        </TouchableHOC>
+                    </View>
+                </View>
+                <View style={[styles.row, styles.screenPadding]}>
+                    <Image source={sampleImages.userImage} style={styles.userImage} />
+                    <View>
+                        <TextCircularMedium style={styles.username}>Mark Carson</TextCircularMedium>
+                        <TouchableHOC style={styles.privacyStatusBox}
+                            onPress={() => this.setState({ showPrivacy: true })}
+                        >
+                            <Image source={icons.sponsoredIcon} style={styles.privacyIcon} />
+                            <TextCircularBook style={styles.privacyText}>Public</TextCircularBook>
+                            <Image source={icons.dropdownIcon} style={styles.dropdownIcon} />
+
+                        </TouchableHOC>
+                    </View>
+                </View>
+                {this.renderCreatePost()}
+                {this.state.showVideoOptions ? <View style={styles.videoPopup}>
+                    <TextCircularMedium style={styles.videoPopupTitle}>Select Video Length</TextCircularMedium>
+                    {this.state.videoOptions.map((val, index) => {
+                        return (
+                            <TouchableHOC style={[styles.row, styles.videoOption]}
+                                onPress={() => this.setState({ showVideoOptions: false })}
+                            >
+                                <Image source={icons.clockIcon} style={styles.clockIcon} />
+                                <TextCircularBook style={styles.optionValue}>{val}</TextCircularBook>
+                            </TouchableHOC>
+                        )
+                    })}
+
+
+
+                </View> : null}
+            </View>
+        )
+    }
+    privacyOptionsView = () => {
+        return (
+            <View>
+                <View style={styles.headerRow}>
+                    <View style={styles.row}>
+                        <TouchableHOC style={styles.backBtn} onPress={() => this.setState({ showPrivacy: false })}>
+                            <Image source={icons.backArrow} style={styles.backIcon} />
+                        </TouchableHOC>
+                        <TextCircularMedium style={styles.popupTitle}>Post Privacy</TextCircularMedium>
+                    </View>
+                    <Button title="Save" style={styles.postBtn} onPress={() => this.setState({ showPrivacy: false })} />
+                </View>
+                <View style={styles.screenPadding}>
+                    <TextCircularMedium style={styles.postPrivacyTitle}>Privacy Setting</TextCircularMedium>
+                    {this.state.postOption.map((item, index) => {
+                        return (
+                            <TouchableHOC style={[styles.row, styles.videoOption]}
+                                onPress={() => this.setState({ showPrivacy: false })}
+                            >
+                                <Image source={item.image} style={styles.clockIcon} />
+                                <TextCircularBook style={styles.optionValue}>{item.option}</TextCircularBook>
+                            </TouchableHOC>
+                        )
+                    })}
+                </View>
+            </View>
+        )
+    }
     render() {
 
 
@@ -263,55 +354,10 @@ export default class CreatePostPopup extends React.Component {
 
                 </TouchableHOC>
                 <View style={styles.modalContainer}>
-                    <View style={styles.headerRow}>
-                        <View style={styles.row}>
-                            <TouchableHOC style={styles.backBtn} onPress={this.dismissPopup}>
-                                <Image source={icons.backArrow} style={styles.backIcon} />
-                            </TouchableHOC>
-                            <TextCircularMedium style={styles.popupTitle}>Create Post</TextCircularMedium>
-                        </View>
-                        <Button title="Post" style={styles.postBtn} onPress={this.dismissPopup} />
-                    </View>
-                    <View style={styles.addPostImageRow}>
-                        <TextCircularBook style={styles.addPostTitle}>Add to your post</TextCircularBook>
-                        <View style={styles.row}>
-                            <TouchableHOC style={styles.galleryBtn} onPress={() => this.setState({ postStyle: 1 })}>
-                                <Image source={icons.galleryIcon} style={styles.galleryIcon} />
-                            </TouchableHOC>
-                            <TouchableHOC style={styles.galleryBtn} onPress={() => this.setState({ postStyle: 2 })}>
-                                <Image source={icons.videoCamIcon} style={styles.galleryIcon} />
-                            </TouchableHOC>
-                        </View>
-                    </View>
-                    <View style={[styles.row, styles.screenPadding]}>
-                        <Image source={sampleImages.userImage} style={styles.userImage} />
-                        <View>
-                            <TextCircularMedium style={styles.username}>Mark Carson</TextCircularMedium>
-                            <View style={styles.privacyStatusBox}>
-                                <Image source={icons.sponsoredIcon} style={styles.privacyIcon} />
-                                <TextCircularBook style={styles.privacyText}>Public</TextCircularBook>
-                                <Image source={icons.dropdownIcon} style={styles.dropdownIcon} />
-
-                            </View>
-                        </View>
-                    </View>
-                    {this.renderCreatePost()}
-                    {this.state.showVideoOptions ? <View style={styles.videoPopup}>
-                        <TextCircularMedium style={styles.videoPopupTitle}>Select Video Length</TextCircularMedium>
-                        {this.state.videoOptions.map((val, index) => {
-                            return (
-                                <TouchableHOC style={[styles.row, styles.videoOption]}
-                                    onPress={() => this.setState({ showVideoOptions: false })}
-                                >
-                                    <Image source={icons.clockIcon} style={styles.clockIcon} />
-                                    <TextCircularBook style={styles.optionValue}>{val}</TextCircularBook>
-                                </TouchableHOC>
-                            )
-                        })}
-
-
-
-                    </View> : null}
+                    {this.state.showPrivacy ?
+                        this.privacyOptionsView() :
+                        this.renderPost()
+                    }
                 </View>
             </Modal >
 

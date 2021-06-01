@@ -263,17 +263,19 @@ export default class EditPostPopup extends React.Component {
                     </View>
                     <Button title="Save" style={styles.postBtn} onPress={() => this.setState({ showPrivacy: false })} />
                 </View>
-                <TextCircularMedium style={styles.postPrivacyTitle}>Privacy Setting</TextCircularMedium>
-                {this.state.postOption.map((item, index) => {
-                    return (
-                        <TouchableHOC style={[styles.row, styles.videoOption]}
-                            onPress={() => this.setState({ showPrivacy: false })}
-                        >
-                            <Image source={item.image} style={styles.clockIcon} />
-                            <TextCircularBook style={styles.optionValue}>{item.option}</TextCircularBook>
-                        </TouchableHOC>
-                    )
-                })}
+                <View style={styles.screenPadding}>
+                    <TextCircularMedium style={styles.postPrivacyTitle}>Privacy Setting</TextCircularMedium>
+                    {this.state.postOption.map((item, index) => {
+                        return (
+                            <TouchableHOC style={[styles.row, styles.videoOption]}
+                                onPress={() => this.setState({ showPrivacy: false })}
+                            >
+                                <Image source={item.image} style={styles.clockIcon} />
+                                <TextCircularBook style={styles.optionValue}>{item.option}</TextCircularBook>
+                            </TouchableHOC>
+                        )
+                    })}
+                </View>
             </View>
         )
     }

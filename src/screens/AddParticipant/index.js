@@ -64,7 +64,10 @@ class AddParticipant extends React.Component {
                         </View>
                     </View>
                     <Button title="Next" style={styles.nextBtn}
-                        onPress={() => this.props.navigation.navigate("CreateGroup")}
+                        onPress={() =>
+                            this.props.route.params?.screenType == "groupChat" ?
+                                this.props.navigation.goBack() :
+                                this.props.navigation.navigate("CreateGroup")}
                     />
                 </View >
                 <ScrollView contentContainerStyle={styles.screenPadding}>

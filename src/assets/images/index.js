@@ -98,6 +98,23 @@ module.exports = {
         userImage2: require('./sampleImages/userImage2.png')
 
 
+    },
+    reactions: {
+
+        ic_back: require('./reactions/ic_back.png'),
+        like_gif: require('./reactions/like.gif'),
+        like_static: require('./reactions/ic_like.png'),
+        like_static_fill: require('./reactions/ic_like_fill.png'),
+        love_gif: require('./reactions/love.gif'),
+        love_static: require('./reactions/love2.png'),
+        haha_gif: require('./reactions/haha.gif'),
+        haha_static: require('./reactions/haha2.png'),
+        wow_gif: require('./reactions/wow.gif'),
+        wow_static: require('./reactions/wow2.png'),
+        sad_gif: require('./reactions/sad.gif'),
+        sad_static: require('./reactions/sad2.png'),
+        angry_gif: require('./reactions/angry.gif'),
+        angry_static: require('./reactions/angry2.png'),
     }
 }
 

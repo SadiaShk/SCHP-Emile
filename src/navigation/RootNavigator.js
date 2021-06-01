@@ -27,7 +27,7 @@ const RootStackNavigator = () => {
     return (
         <RootStack.Navigator
             screenOptions={getOptions}
-            headerMode="screen">
+        >
 
 
             <RootStack.Screen

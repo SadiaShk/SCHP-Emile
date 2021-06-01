@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native';
 import vh from '../../utils/units/vh';
 import vw from '../../utils/units/vw';
-import { Fonts } from '../../assets/fonts';
+import fonts, { Fonts } from '../../assets/fonts';
 import theme from '../../utils/units/theme';
 const styles = StyleSheet.create({
   postContainer: {
@@ -82,7 +82,9 @@ const styles = StyleSheet.create({
     marginLeft: 2 * vw,
   },
   commentCountText: {
-    fontSize: 1.75 * vh
+    fontSize: 1.85 * vh,
+    color: theme.colors.white,
+    fontFamily: fonts.Fonts.CBK
   },
   dotText: {
     marginHorizontal: 1 * vw,
@@ -92,13 +94,13 @@ const styles = StyleSheet.create({
     // borderBottomColor: theme.colors.gray3,
     // borderBottomWidth: 0.07 * vh,
     borderTopWidth: 0.07 * vh,
-    marginTop: 1.5 * vh,
-    paddingVertical: 1.3 * vh,
+    marginTop: 2 * vh,
+    paddingVertical: 1.5 * vh,
     justifyContent: "space-around"
   },
   likeIcon: {
-    width: 2 * vh,
-    height: 2 * vh,
+    width: 2.3 * vh,
+    height: 2.3 * vh,
     resizeMode: 'contain',
     marginRight: 2 * vw,
   },
@@ -164,7 +166,7 @@ const styles = StyleSheet.create({
     width: 46 * vw,
     height: 18 * vh,
     marginRight: 1 * vw,
-    marginBottom: 1.7 * vh
+    marginBottom: 0.6 * vh
   },
   blurView3: {
     backgroundColor: "#24242491",
@@ -298,6 +300,150 @@ const styles = StyleSheet.create({
     height: 2 * vh,
     marginLeft: 1 * vw,
   },
+  //anim styles
+  viewContainer: {
+    flex: 1,
+    flexDirection: 'column'
+  },
+
+  // Toolbar
+  toolbar: {
+    width: '100%',
+    height: Platform.OS === 'android' ? 48 : 68,
+    alignItems: 'center',
+    backgroundColor: '#3b5998',
+    flexDirection: 'row'
+  },
+  icBack: {
+    width: 23,
+    height: 23,
+    marginLeft: 26,
+    tintColor: 'white',
+    marginTop: Platform.OS === 'android' ? 0 : 20
+  },
+  icTrail: {
+    width: 23,
+    height: 23,
+    marginLeft: 26,
+    marginTop: Platform.OS === 'android' ? 0 : 20
+  },
+  titleToolbar: {
+    color: 'white',
+    fontWeight: 'bold',
+    fontSize: 18,
+    textAlign: 'center',
+    flex: 1,
+    marginTop: Platform.OS === 'android' ? 0 : 20
+  },
+
+  // Body
+  viewBody: {
+    flex: 1,
+    flexDirection: 'column',
+    position: "absolute",
+    bottom: 9 * vh
+  },
+
+  // Top blank space
+  viewTopSpace: {
+    width: '100%',
+    height: 100
+  },
+
+  // Main content
+  viewContent: {
+    borderWidth: 0,
+    borderColor: 'red',
+    flexDirection: 'column',
+
+    marginRight: 10
+  },
+
+  // Box
+  viewBox: {
+    borderRadius: 30,
+    width: 80 * vw,
+    height: 6 * vh,
+    marginTop: 0.3 * vh,
+    marginLeft: 4 * vw,
+    position: 'absolute',
+    // Has to set color for elevation
+    backgroundColor: 'white'
+    // elevation: 6,
+  },
+
+  // Button like
+  viewBtn: {
+    flexDirection: 'row',
+    width: 100,
+    justifyContent: 'space-around',
+    alignItems: 'center',
+    borderWidth: 1,
+    padding: 10,
+    borderRadius: 3,
+    marginTop: 170,
+    backgroundColor: 'white'
+  },
+  textBtn: {
+    color: 'grey',
+    fontSize: 14,
+    fontWeight: 'bold'
+  },
+  imgLikeInBtn: {
+    width: 25,
+    height: 25
+  },
+
+  // Group icon
+  viewWrapGroupIcon: {
+    flexDirection: 'row',
+    width: 80 * vw,
+    height: 7 * vh,
+    marginTop: 2 * vh,
+    position: 'absolute',
+    borderWidth: 0,
+    borderColor: 'blue',
+    alignItems: 'flex-end',
+    justifyContent: 'space-around',
+    paddingLeft: 5,
+    paddingRight: 5,
+  },
+  viewWrapIcon: {
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  imgIcon: {
+    width: 4.2 * vh,
+    height: 4.2 * vh
+  },
+  viewWrapTextDescription: {
+    backgroundColor: 'rgba(0, 0, 0, 0.3)',
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: 10,
+    paddingLeft: 7,
+    paddingRight: 7,
+    paddingTop: 2,
+    paddingBottom: 2,
+    position: 'absolute'
+  },
+  textDescription: {
+    color: 'white',
+    fontSize: 8
+  },
+
+  // Group jump icon
+  viewWrapGroupJumpIcon: {
+    flexDirection: 'row',
+    width: 80 * vw,
+    height: 7 * vh,
+    borderWidth: 0,
+    borderColor: 'green',
+    marginTop: -6 * vh,
+    marginLeft: 2 * vw,
+    position: 'absolute',
+    alignItems: 'flex-end'
+  }
 
 });
 export default styles;

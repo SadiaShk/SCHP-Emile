@@ -71,31 +71,12 @@ export const showRightButton = (activeRouteName, { navigation, route }) => {
         case 'Faqs':
         case 'Contact':
 
-
             return null
-        case 'HomeTabNavigator':
-            return (
-                <View style={styles.headerRow}>
-                    <IconButton onPress={() => { }}
-                        style={[styles.headerButtons]} icon={icons.searchIcon}
-                        iconStyle={{ marginLeft: -0.4 * vw, tintColor: theme.colors.white }}
-                        onPress={() => { }}
-                    />
-                    <IconButton onPress={() => { }}
-                        style={[styles.headerButtons]} icon={icons.chatBubble}
-                        iconStyle={{ marginLeft: -0.4 * vw, tintColor: theme.colors.white }}
-                        onPress={() => { }}
-                    />
-                </View>
-            )
+
         default:
             return (
                 <View style={styles.headerRow}>
-                    {/* <IconButton onPress={() => { }}
-                        style={[styles.headerButtons]} icon={icons.searchIcon}
-                        iconStyle={{ marginLeft: -0.4 * vw, tintColor: theme.colors.white }}
-                        onPress={() => navigation.navigate("SearchScreen")}
-                    /> */}
+
                     <TouchableHOC style={styles.headerBtnView}
                         onPress={() => navigation.navigate("SearchScreen")}
                     >
@@ -109,9 +90,6 @@ export const showRightButton = (activeRouteName, { navigation, route }) => {
 
                 </View>
             )
-        // <IconButton onPress={() => navigation.navigate("Notification")}
-        //     style={[styles.headerButtons]} icon={icons.notification}
-        // />
 
     }
 };
@@ -191,12 +169,13 @@ export const getOptions = (props) => {
     return {
         ...defaultOptions(activeRouteName, props),
         ...TransitionPresets.SlideFromRightIOS,
+        gestureEnabled: true,
+        animationEnabled: true,
         headerShown: shouldHeaderBeShown(activeRouteName),
         title: getTitle(activeRouteName, props),
         // ...(activeRouteName == 'Services' || activeRouteName == 'Signup' || activeRouteName == 'Menu'
         //     || activeRouteName == 'EditProfile' || activeRouteName == "ServiceDetail"
         //     ? { header: (props) => <ExtendedHeader {...props} /> }
         //     : null),
-        gestureEnabled: false,
     };
 };

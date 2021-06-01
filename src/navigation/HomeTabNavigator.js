@@ -16,6 +16,7 @@ import NotificationScreen from '../screens/NotificationScreen';
 import LiveVideoScreen from '../screens/LiveVideoScreen';
 import FriendRequestListing from '../screens/FriendRequestListing';
 import CustomTabBar from '../components/CustomTabBar';
+import GroupChatScreen from '../screens/GroupChatScreen';
 const HomeTabs = createMaterialTopTabNavigator();
 
 const HomeTabNavigator = (props) => {
@@ -24,18 +25,17 @@ const HomeTabNavigator = (props) => {
 
         <HomeTabs.Navigator
             tabBarPosition='top'
-            lazy={true}
+
             tabBar={props => <CustomTabBar {...props} />}
 
         >
 
             <HomeTabs.Screen
                 name="HomeStackNavigator"
+
                 component={HomeStackNavigator}
 
             />
-
-
             <HomeTabs.Screen
                 name="FriendRequestListing"
                 component={FriendRequestListing}
@@ -50,6 +50,7 @@ const HomeTabNavigator = (props) => {
             />
             <HomeTabs.Screen
                 name="NotificationScreen"
+
                 component={NotificationScreen}
 
             />

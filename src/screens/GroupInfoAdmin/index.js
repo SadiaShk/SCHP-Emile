@@ -63,7 +63,7 @@ class GroupInfoAdmin extends React.Component {
             <View style={styles.mainContainer}>
                 <View style={styles.headerRow}>
                     <View style={styles.row}>
-                        <TouchableHOC onPress={() => this.props.navigation.goBack()}>
+                        <TouchableHOC onPress={() => this.props.navigation.pop()}>
                             <Image source={icons.backArrow} style={styles.backArrow} />
                         </TouchableHOC>
                         <View>
@@ -73,10 +73,10 @@ class GroupInfoAdmin extends React.Component {
                     </View>
                     <View style={styles.row}>
                         {this.state.isAdmin ? <Button title="Add Users" style={styles.nextBtn}
-                            onPress={() => this.props.navigation.navigate("AddParticipant")}
+                            onPress={() => this.props.navigation.navigate("AddParticipant", { screenType: "groupChat" })}
                         /> :
                             <Button title="Delete" style={styles.nextBtn}
-                                onPress={() => this.props.navigation.navigate("AddParticipant")}
+                                onPress={() => { }}
                             />
                         }
                         {this.state.isAdmin ? <TouchableHOC style={styles.trashBtn}>

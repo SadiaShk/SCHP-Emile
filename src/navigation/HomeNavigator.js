@@ -21,6 +21,7 @@ const HomeStackNavigator = () => {
         >
             <HomeStack.Screen
                 name="HomeScreen"
+
                 component={HomeScreen}
             />
             <HomeStack.Screen
