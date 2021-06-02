@@ -27,6 +27,7 @@ const HomeTabNavigator = (props) => {
             tabBarPosition='top'
 
             tabBar={props => <CustomTabBar {...props} />}
+            swipeEnabled={false}
 
         >
 

@@ -23,6 +23,7 @@ const HomeStackNavigator = () => {
                 name="HomeScreen"
 
                 component={HomeScreen}
+                options={{ gestureEnabled: true, gestureDirection: 'horizontal' }}
             />
             <HomeStack.Screen
                 name="ChatListing"

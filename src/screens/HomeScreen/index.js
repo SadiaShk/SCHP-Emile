@@ -154,7 +154,7 @@ class HomeScreen extends React.Component {
                             onPressProfile={() => this.props.navigation.navigate("FriendProfile")}
                             reactionPress={() => this.reactionPopup.show()}
                             onOptionPress={() => this.postOptionsPopup.show()}
-
+                            props={this.props}
                         />
                     )
                 })}

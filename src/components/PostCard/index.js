@@ -121,6 +121,7 @@ class PostCard extends React.Component {
 
   componentWillUnmount() {
     // BackHandler.removeEventListener('hardwareBackPress', this.backPress);
+
   }
 
 
@@ -131,11 +132,15 @@ class PostCard extends React.Component {
       onMoveShouldSetPanResponder: (evt, gestureState) =>
         !this.isTouchBtn && this.isLongTouch,
 
+
       onPanResponderGrant: (evt, gestureState) => {
+        console.log('grant', evt);
         this.handleEmoticonWhenDragging(evt, gestureState);
       },
 
       onPanResponderMove: (evt, gestureState) => {
+        console.log('move', evt);
+
         this.handleEmoticonWhenDragging(evt, gestureState);
       },
 
@@ -149,6 +154,15 @@ class PostCard extends React.Component {
 
         this.onDragRelease();
       },
+      onStartShouldSetPanResponder: (e, gestureState) => {
+        console.log("tsets", gestureState);
+        return true;
+      },
+      onPanResponderEnd: (e, gestureState) => {
+        console.log("tsets", gestureState);
+
+        return true;
+      }
     });
   }
   handleEmoticonWhenDragging = (evt, gestureState) => {
@@ -1577,7 +1591,9 @@ class PostCard extends React.Component {
 
             <View style={styles.expandedRow}>
               {/* Body */}
-              <View style={styles.viewBody} {...this.rootPanResponder.panHandlers}>
+              <View style={styles.viewBody} {...this.rootPanResponder.panHandlers}
+                pointerEvents="box-none"
+              >
                 {/* Top space */}
                 <View style={styles.viewTopSpace} />
 

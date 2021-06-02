@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native';
+import { Platform, StyleSheet } from 'react-native';
 import vh from '../../utils/units/vh';
 import vw from '../../utils/units/vw';
 import fonts, { Fonts } from '../../assets/fonts';
@@ -341,13 +341,15 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'column',
     position: "absolute",
-    bottom: 9 * vh
+    bottom: 9 * vh,
+    backgroundColor: "rgba(255,255,255,0.01)"
   },
 
   // Top blank space
   viewTopSpace: {
     width: '100%',
-    height: 100
+    height: 100,
+    backgroundColor: "rgba(255,255,255,0.01)"
   },
 
   // Main content
@@ -398,14 +400,20 @@ const styles = StyleSheet.create({
   viewWrapGroupIcon: {
     flexDirection: 'row',
     width: 80 * vw,
-    height: 7 * vh,
-    marginTop: 2 * vh,
+    height: 6.7 * vh,
+    marginTop: 1.6 * vh,
+    ...Platform.select({
+      android: {
+        marginTop: 1.4 * vh,
+
+      }
+    }),
     position: 'absolute',
     borderWidth: 0,
     borderColor: 'blue',
     alignItems: 'flex-end',
     justifyContent: 'space-around',
-    paddingLeft: 5,
+    paddingLeft: 1,
     paddingRight: 5,
   },
   viewWrapIcon: {
@@ -413,8 +421,8 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
   imgIcon: {
-    width: 4.2 * vh,
-    height: 4.2 * vh
+    width: 4 * vh,
+    height: 4 * vh
   },
   viewWrapTextDescription: {
     backgroundColor: 'rgba(0, 0, 0, 0.3)',
@@ -440,6 +448,12 @@ const styles = StyleSheet.create({
     borderWidth: 0,
     borderColor: 'green',
     marginTop: -6 * vh,
+    ...Platform.select({
+      android: {
+        marginTop: -2 * vh,
+
+      }
+    }),
     marginLeft: 2 * vw,
     position: 'absolute',
     alignItems: 'flex-end'
